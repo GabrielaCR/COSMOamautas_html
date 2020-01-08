@@ -248,6 +248,20 @@ img {
   max-width: 100%;
 }
 
+.circular--portrait {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+}   
+
+
 /* line 134, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_common.scss */
 a:focus, .button:focus, button:focus, .btn:focus {
   text-decoration: none;
@@ -675,17 +689,20 @@ input:-internal-autofill-selected {
 .single-blog {
   overflow: hidden;
   margin-bottom: 30px;
+    
 }
 
 /* line 24, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
 .single-blog:hover {
   box-shadow: 0px 10px 20px 0px rgba(42, 34, 123, 0.1);
+    
 }
 
 /* line 28, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
 .single-blog .thumb {
   overflow: hidden;
   position: relative;
+    
 }
 
 /* line 32, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
@@ -700,6 +717,7 @@ input:-internal-autofill-selected {
   opacity: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+    
 }
 
 /* line 45, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
@@ -766,6 +784,7 @@ input:-internal-autofill-selected {
   /* line 20, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
   .single-blog {
     margin-bottom: 30px;
+      
   }
 }
 
@@ -818,6 +837,7 @@ input:-internal-autofill-selected {
 /* line 153, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
 .full_image.single-blog {
   position: relative;
+    
 }
 
 /* line 156, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
@@ -844,17 +864,20 @@ input:-internal-autofill-selected {
   transition: 0.5s;
   border-bottom: none;
   padding-bottom: 5px;
+    
 }
 
 /* line 181, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
 .full_image.single-blog a {
   font-size: 20px;
   font-weight: 600;
+
 }
 
 /* line 191, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
 .full_image.single-blog .date {
   color: #fff;
+    
 }
 
 /* line 196, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_blog.scss */
@@ -2805,6 +2828,8 @@ input:-internal-autofill-selected {
   background-size: cover;
   background-position: center;
   padding: 60px;
+
+
 }
 
 @media (max-width: 991px) {
@@ -2812,6 +2837,7 @@ input:-internal-autofill-selected {
   .about_us .about_us_img {
     padding: 10px;
     margin-bottom: 40px;
+
   }
 }
 
@@ -2821,6 +2847,7 @@ input:-internal-autofill-selected {
   height: auto;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
+
 }
 
 /* line 27, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_about.scss */
@@ -3040,6 +3067,7 @@ input:-internal-autofill-selected {
   border-radius: 50px 0 50px 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+    
 }
 
 /* line 172, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_about.scss */
@@ -4605,6 +4633,7 @@ input:-internal-autofill-selected {
   display: flex;
   align-items: center;
   margin: 0 auto;
+    
 }
 
 @media (max-width: 991px) {

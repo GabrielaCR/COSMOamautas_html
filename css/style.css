@@ -4148,7 +4148,7 @@ input:-internal-autofill-selected {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 980px;
+  height: 1200px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -4179,6 +4179,7 @@ input:-internal-autofill-selected {
   margin-bottom: 35px;
   font-weight: 700;
 }
+
 
 @media (max-width: 576px) {
   /* line 24, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_intro_video_bg.scss */
@@ -4219,7 +4220,6 @@ input:-internal-autofill-selected {
   line-height: 30px;
   color: #fff;
   margin-bottom: 53px;
-  padding: 0 116px;
 }
 
 

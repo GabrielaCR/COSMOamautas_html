@@ -190,11 +190,18 @@ p {
   color: #818181;
   font-family: "Roboto", sans-serif;
   line-height: 30px;
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 0px;
   font-weight: 300;
 }
-
+p2 {
+  color: #0550c8;
+  font-family: "Roboto", sans-serif;
+  line-height: 30px;
+  font-size: 15px;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
 /* line 100, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_common.scss */
 h2 {
   font-size: 44px;

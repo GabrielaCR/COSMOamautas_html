@@ -4168,7 +4168,7 @@ input:-internal-autofill-selected {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 4000px;
+  height: 4500px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -4176,7 +4176,7 @@ input:-internal-autofill-selected {
 }
 
   .intro_white_bg h2 {
-    font-size: 35px;
+    font-size: 32px;
       text-align: center;
 }
   
@@ -4187,12 +4187,12 @@ input:-internal-autofill-selected {
   
     .intro_white_bg p {
     font-size: 16px;
-      text-align: justify;
+      text-align: left;
 }
   
   .intro_white_bg ul {
     font-size: 16px;
-      text-align: justify;
+      text-align: left;
      list-style-type: circle;
   }
 

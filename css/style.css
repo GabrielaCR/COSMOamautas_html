@@ -4198,6 +4198,68 @@ input:-internal-autofill-selected {
      font color="Black";
   }
 
+/**************** intro_video css start ****************/
+
+.intro_black_bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1500px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+  .intro_black_bg h2 {
+    font-size: 32px;
+      text-align: left;
+}
+  
+  .intro_black_bg h3 {
+    font-size: 20px;
+      text-align: left;
+}
+  
+    .intro_black_bg p {
+    font-size: 16px;
+      text-align: left;
+}
+  
+  .intro_black_bg ul {
+    font-size: 16px;
+      text-align: left;
+     list-style-type: circle;
+  }
+
+
+/**************** intro_video css start ****************/
+
+.intro_band_bg {
+  background-position: center;
+    background-image: url("../img/deep_sky2.jpg");/*****url("../img/banner_img4.jpg");**/
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+  .intro_black_bg h2 {
+    font-size: 32px;
+      text-align: left;
+}
+  
+  .intro_black_bg h3 {
+    font-size: 20px;
+      text-align: left;
+}
+  
+
+/**************** intro_video css start ****************/
+
 
 .intro_video_bg {
   background-image: url("../img/escuela.jpg");
@@ -6950,7 +7012,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 1, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_breadcrumb.scss */
 .breadcrumb_bg {
-  background-image: url("../img/girls.jpg");
+  background-image: url("../img/banner_img4.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6974,7 +7036,7 @@ h1, h2, h3, h4, h5, h6 {
   background-image: -moz-linear-gradient(-89deg, #004683, #220152);
   background-image: -webkit-linear-gradient(-89deg, #004683, #220152);
   background-image: -ms-linear-gradient(-89deg, #004683, #220152);
-  opacity: 0.8;
+  opacity: 0.4;
   z-index: -1;
 }
 
@@ -6994,7 +7056,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 32, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_breadcrumb.scss */
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
   color: #fff;
-  font-size: 100px;
+  font-size: 90px;
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: capitalize;
@@ -7017,13 +7079,13 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 32, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_breadcrumb.scss */
   .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 
 /* line 54, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_breadcrumb.scss */
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item p {
-  font-size: 15px;
+  font-size: 16px;
   color: #fff;
   text-transform: capitalize;
 }

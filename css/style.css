@@ -4196,6 +4196,11 @@ input:-internal-autofill-selected {
      list-style-type: circle;
      font color="Black";
   }
+  
+   .intro_white_bg hr.new1 {
+     border: 0.2px solid #2058A2;
+
+}
 
 /**************** intro_video css start ****************/
 

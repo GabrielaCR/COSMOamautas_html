@@ -5101,6 +5101,9 @@ input:-internal-autofill-selected {
   padding: 100px 0 70px 0;
 }
 
+.sample-text-area h4 {
+  font-weight: 300; /* Normal */
+}
 /* line 80, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_elements.scss */
 .text-heading {
   margin-bottom: 30px;
@@ -5126,6 +5129,11 @@ h2 {
   font-size: 30px;
 }
 
+#countdown {
+    font-size: 30px; /* Make countdown match h2 */
+    font-weight: 200;
+    color: #2058A2;
+}
 /* line 101, ../../01 cl html template/03_jun 2019/183_Charity_html/sass/_elements.scss */
 h3 {
   font-size: 24px;

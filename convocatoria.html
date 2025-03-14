@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99147880-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-99147880-2');
+</script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>COSMOamautas - Docentes</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+     <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="ti-menu"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">HOME</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="maestros.html">EDUCACIÓN</a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="convocatoria.html">CONVOCATORIA.2025</a>
+                                </li>
+                                 
+                               <!--    <li class="nav-item">
+                                    <a class="nav-link" href="ciencia0.html"> INVESTIGACIÓN </a>
+                                </li> 
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="escuelas.html">DIVULGACIÓN</a>
+                                </li>-->
+                                                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="astroclub.html"> ASTROCLUBES</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="videojuegos.html"> VIDEOJUEGOS</a>
+                                </li>
+
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="instructores.html"> EQUIPO </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+
+	<!-- breadcrumb start-->
+	<section class="breadcrumb breadcrumb_bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb_iner">
+						<div class="breadcrumb_iner_item text-center">
+							<h2>Convocatoria 2025</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- breadcrumb start-->
+
+   <!--   <section class="intro_white_bg">
+      <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-10">
+                    <div class="intro_video_iner text-center">
+
+  
+
+        <!-- intro_video_bg start
+-->
+	<section class="sample-text-area"> 
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-10">
+                    <div class="intro_video_iner text-center">
+
+  
+                        <h2> <font color=#2058A2> CONVOCATORIA NACIONAL   </font> <br> 
+                          <font color="black">  &#x1F680; CosmoAmautas 2025 <br>  </font>  </h2>   
+ 						   <!--  <h3> <font color=#2058A2> 15 de Marzo - 15 de Abril   </font> <br> <br>  </h3>-->
+
+
+                        <h3> <font color=#2058A2> Capacitación gratuita en astrofísica para docentes <br>líderes de clubes de astronomía <br> <br>   </font> </h3>
+                        
+               <h3> <font color="black"> Inscripción abierta hasta el 15 de Abril 2025. <br><br> La convocatoria cierra en:</font> </h3>          
+                        
+
+    <p id="countdown"></p>
+
+    <script>
+        function countdownTimer(targetDate) {
+            const target = new Date(targetDate).getTime();
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const difference = target - now;
+                
+                if (difference < 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerHTML = "Convocatoria cerrada.";
+                } else {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    document.getElementById("countdown").innerHTML = 
+                        `${days}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ${hours}  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp; ${minutes}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ${seconds} <br> `;
+                }
+            }, 1000); // Updates every second
+        }
+
+        // Set your target date (YYYY-MM-DD HH:MM:SS format)
+        countdownTimer("2025-04-16 06:00:00");
+    </script>
+                        
+                        
+                  <h4> <font color="black"> &nbsp;  &nbsp;&nbsp; Días  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Horas    &nbsp;&nbsp;     Minutos &nbsp;&nbsp;     Segundos <br><br></font> </h4>   
+                                                
+
+                                                                         <a href="https://forms.gle/tKwvdWspzwGhF3dr5" class="btn_2"> POSTULA AQUÍ </a>
+                                                                        <p>.</p> 
+                                              <!--  <img src="img/mapa_2021_4.jpeg" style="width: 100%"  alt="">  -->
+                        
+                                			</div>  
+                                			<div class="intro_video_iner text-left">                      
+                        <h3> <br>  <font color=#2058A2>¿Qué es el taller CosmoAmautas?  </font> </h3>
+						 <h4> <br> <font color="black">
+						 🔭  <strong>CosmoAmautas</strong> es un proyecto de educación científica, financiado por la Oficina de Astronomía para el Desarrollo (OAD) de la Unión Astronómica Internacional (UAI). Nuestro objetivo es fortalecer la enseñanza de las ciencias y en especial la astronomía, de forma descentralizada en el Perú, acercando el método científico a los alumnos a través de sus docentes.<br> <br>
+						📅  En 2025, realizaremos un <strong>taller de capacitación virtual</strong> dirigido exclusivamente a profesores de secundaria que se comprometan a <strong>crear un club de astronomía (AstroClub) en su escuela </strong> antes del inicio del taller.<br> <br>
+						💡  Nuestro equipo te brindará asesoría, materiales y apoyo continuo para abrir y consolidar su club como un espacio de aprendizaje activo, 
+						donde junto a tus estudiantes podrán explorar el universo a través de la <strong>astronomía, la física y las matemáticas</strong>. Además formará parte de una red de AstroClubes a nivel nacional.<br> <br>
+						  </font> </h4>
+						
+						<hr class="new1">
+						
+						<h3> <br> <font color=#2058A2>¿Cómo y cuándo?  </font> </h3>  <br>  
+						 
+						  <h4> <br> <font color="black">
+						    📚  <strong>Formación con expertos</strong>: Los instructores CosmoAmautas son astrofísicos, profesionales de la educación y estudiantes universitarios de física, y compartiremos estrategias y actividades pedagógicas sobre diversos temas de astronomía y astrofísica. <br> <br>
+						     🕛 <strong>¿Cuándo?</strong> El taller consiste en 6 sesiones virtuales por la plataforma Zoom: sábados 10 y 24 de mayo, 7 y 21 de junio, 5 y 19 de julio de 2025, de 9 a.m. a 3 p.m.   <br> <br>
+						    🎁  <strong> Material gratuito:</strong> Docentes recibirán en sus domicilios un libro de texto y todo el material necesario para realizar experimentos y actividades, sin costo alguno. <br>  <br>  
+						  	🏆 <strong> Premios:</strong> Los AstroClubes más destacados recibirán telescopios y materiales adicionales para enriquecer la experiencia de sus estudiantes.  <br> <br>
+						    👩‍🚀 <strong> Enfoque inclusivo:</strong> Buscamos fortalecer una educación científica moderna e interactiva, con especial énfasis en incentivar la participación de niñas y mujeres en ciencia. <br> <br>   
+						    </font> 
+						 <br></h4>
+
+
+						 
+						<hr class="new1">
+                      <h3> <br> <font color=#2058A2>  Requisitos para participar:  </font> </h3> <br>
+						
+ 						  <h4>  <font color="black">✅  Ser docente en ejercicio de <strong>secundaria</strong> en <strong>ciencias</strong> en una institución educativa (estatal o particular) en el año académico 2025. <br><br> </font>  
+ 						 		 </h4> 
+ 						  <h4> <font color="black"> ✅  Comprometerse a <strong>asistir a las 6 sesiones</strong> del taller, que se realizarán los sábados 10 y 24 de mayo, 7 y 21 de junio, 5 y 19 de julio de 2025, de 9 a.m. a 3 p.m. <br><br></font> </h4> 
+  						    <h4>  <font color="black"> ✅ Crear un <strong>club de astronomía</strong> (AstroClub) en su escuela antes del inicio del taller. ¡Le brindaremos apoyo y orientación para su formación y desarrollo! <br><br> </font> </h4> 
+  						    <h4>  <font color="black"> ✅  Tener accesso a internet y disponer de un smartphone, tablet o computadora, que tengan micrófonos y cámara.  </font> <br> <br>	</h4> 
+  		
+  		 				  <h4> 
+  		 				<font color=#2058A2> ✨ <strong>Si te fascinan las ciencias del espacio, te gusta experimentar nuevos métodos en sus clases, y compartes nuestra visión de educar mentes curiosas, científicas y libres para el futuro de tu región, entonces CosmoAmautas es para tí! </strong> <br> <br></font>  
+  		 				<font color="black"> ✨ Alentamos especialmente la postulación de <strong>mujeres docentes</strong> y de docentes en <strong>provincias y áreas rurales</strong>.  <br> <br> <br> </font>
+  		
+  						Si tienes dudas o consultas, escríbenos a cosmoamautas@gmail.com.
+						Para más información te invitamos a visitar también nuestras redes sociales, donde tendremos una sesión en vivo de preguntas a inicios de Abril.<br> <br> <br>
+  						</h4> 
+					
+
+        			</div>
+  					<div class="intro_video_iner text-center">
+  		
+                          <a href="https://forms.gle/tKwvdWspzwGhF3dr5" class="btn_2"> POSTULA AQUÍ  <br></a>
+                            	  					
+  	  					
+						
+                      
+        			</div>    
+
+						<hr class="new1">
+                          <h3> <font color=#2058A2>  <br>Plan de contenidos:   </font> </h3> <br>
+                          <ul>
+ 						  <h4>  <font color="black">Día 1 :  Los secretos de nuestro cielo, el sol y la luna  </font>  </h4> 
+  						  <h4>  <font color="black"> Día 2 :  Exploraremos los planetas, meteoritos y demás objetos del sistema solar  </font>  </h4> 
+  						  <h4>  <font color="black">Día 3 :  Somos polvo de estrella: la física detrás de las estrellas  </font> </h4> 
+  						  <h4>  <font color="black"> Día 4 :  Hay vida en otros planetas?: Planetas extrasolares y cómo cuidar la vida en el nuestro!  </font> </h4> 
+  	  					  <h4>  <font color="black">Día 5 :  El inmenso universo: Explorando galaxias lejanas y la física de los agujeros negros  </font> </h4>  		
+  	  					  <h4> <font color="black"> Día 6 :  La historia del todo: la teoría del Big Bang y la historia del universo   </font><br>	 </h4> 			 
+  	  					
+						</ul>
+						                             <img src="img/topics_cosmoamautas.jpeg" style="width: 100%"  alt="">  
+
+   						<hr class="new1">
+
+
+<!-- 
+
+					   <div class="row justify-content-between align-items-center">
+				 
+							 <div class="col-lg-5">
+								<div class="intro_video_iner text-center">
+										 <h4> <br><br><br><br></h4>
+									<h2> Pasa la voz! </h2>
+									<h4> Comparte la convocatoria con todos tus colegas! 
+									</h4>
+								</div>
+							 </div>
+					 
+
+				 
+							 <div class="col-lg-7"> 
+							   <div class="breadcrumb_iner_item text-right">
+									 <p> <br><br><br><br></p>
+									 <img src="img/poster.jpeg" style="width: 100%"  alt="">  
+							   </div>   
+							 </div>   
+ -->
+					   </div>  
+		   
+            
+        			</div>
+    			</div>
+    		</div>
+   		</div>
+ 	</section>
+
+    <!--::convocatoria ends here::-->
+
+
+
+
+
+
+
+
+
+    <!--::footer_part here::-->
+
+    <footer class="footer_part">
+        <div class="container">
+        
+            <div class="row justify-content-around">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_footer_part">
+                        <img src="img/footer_logo.png" class="footer_logo" alt="">
+                        <h3> WWW.COSMOAMAUTAS.ORG </h3> 
+                         <p> E-mail: cosmoamautas@gmail.com </p>    
+                        
+                        <div class="footer_icon social_icon">
+                        		<ul class="list-unstyled">
+                           			<li> <a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon"><i class="fab fa-facebook-f fa-2x" style="color:white"></i></a></li>
+                            		<li><a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw"  class="single_social_icon"><i class="fab fa-twitter fa-2x" style="color:white"></i></a></li>
+                            		<li><a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon"><i class="fab fa-instagram fa-2x" style="color:white"></i></a></li>
+                        		</ul>
+                    	</div>     	
+ 					</div>
+ 				</div>
+ 				
+			
+            </div>
+            
+            <hr>
+ 
+            <div class="row">
+            
+                <div class="col-lg-6">
+                    <div class="copyright_text">
+                        <p> Copyright &copy; CosmoAmautas 2021 </p>
+                    </div>
+                </div>     
+               
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+    <!--::footer_part end::-->
+    <!-- jquery plugins here-->
+
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/countdown.jquery.min.js"></script>
+    <script src="js/timer.js"></script>
+    <!-- contact js -->
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script> 	
+ 	
+</body>
+</html>

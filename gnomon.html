@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Solar - CosmoAmautas</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/suncalc@1.9.0/suncalc.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f8fb;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    label {
+      margin-top: 1rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    small {
+      display: block;
+      color: #666;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #resultado {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #1a5276;
+      white-space: pre-line;
+      text-align: center;
+    }
+
+    #graficoTriangulo {
+      margin-top: 1.5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .referencia {
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .referencia img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      margin-top: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .referencia p {
+      font-size: 0.9rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🌞 Calculadora de sombra al mediodía solar</h2>
+    <p>Ingresa los valores para estimar la longitud de la sombra de un gnomon.</p>
+
+    <label for="altura">Altura del gnomon (m):</label>
+    <input type="number" id="altura" value="1" step="0.01">
+    <small>Ej: 1.5</small>
+
+    <label for="latitud">Latitud (°):</label>
+    <input type="number" id="latitud" value="-12.0" step="0.0001">
+    <small>Formato decimal. Usa negativo para sur.</small>
+
+    <label for="longitud">Longitud (°):</label>
+    <input type="number" id="longitud" value="-77.0" step="0.0001">
+    <small>Formato decimal. Usa negativo para oeste.</small>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha">
+    <small>Selecciona una fecha válida.</small>
+
+    <button onclick="calcularSombra()">Calcular sombra y mostrar triángulo</button>
+
+    <div id="resultado"></div>
+    <canvas id="graficoTriangulo" width="400" height="400"></canvas>
+  </div>
+
+  <div class="referencia">
+    <p><strong>Referencia visual:</strong> Triángulo formado por el gnomon y su sombra</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Eratosthenes_shadow.svg/800px-Eratosthenes_shadow.svg.png" alt="Triángulo solar - sombra de gnomon">
+  </div>
+
+  <script>
+    function calcularSombra() {
+      const altura = parseFloat(document.getElementById('altura').value);
+      const lat = parseFloat(document.getElementById('latitud').value);
+      const lon = parseFloat(document.getElementById('longitud').value);
+      const fechaInput = document.getElementById('fecha').value;
+
+      if (!fechaInput) {
+        alert("Por favor selecciona una fecha.");
+        return;
+      }
+
+      const fecha = new Date(fechaInput);
+      const times = SunCalc.getTimes(fecha, lat, lon);
+      const elevacion = SunCalc.getPosition(times.solarNoon, lat, lon).altitude * 180 / Math.PI;
+
+      if (elevacion <= 0 || elevacion >= 90) {
+        alert("El Sol no está en una posición válida para calcular sombra.");
+        return;
+      }
+
+      const radianes = elevacion * Math.PI / 180;
+      const sombra = altura / Math.tan(radianes);
+
+      document.getElementById('resultado').innerText =
+        `🕛 Mediodía solar: ${times.solarNoon.toLocaleTimeString()}\n📏 Longitud de la sombra: ${sombra.toFixed(2)} metros`;
+
+      const ctx = document.getElementById('graficoTriangulo').getContext('2d');
+      if (window.trianguloChart) window.trianguloChart.destroy();
+
+      window.trianguloChart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            label: 'Triángulo solar',
+            data: [
+              {x: 0, y: 0},
+              {x: sombra, y: 0},
+              {x: 0, y: altura},
+              {x: 0, y: 0}
+            ],
+            showLine: true,
+            borderColor: 'orange',
+            backgroundColor: 'orange',
+            tension: 0
+          }]
+        },
+        options: {
+          responsive: false,
+          scales: {
+            x: {
+              beginAtZero: true,
+              title: { display: true, text: 'Longitud de la sombra (m)' }
+            },
+            y: {
+              beginAtZero: true,
+              title: { display: true, text: 'Altura del gnomon (m)' }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: 'Triángulo solar al mediodía'
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

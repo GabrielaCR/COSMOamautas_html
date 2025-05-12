@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Distancia Meridional</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+    }
+
+    label {
+      margin-top: 1rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 10px;
+      width: 100%;
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #result {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #1a5276;
+      text-align: center;
+    }
+
+    #map {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Calculadora de Distancia Meridional</h1>
+	<label for="lat1">Latitud 1 (°):</label>
+	<input type="number" id="lat1" step="any" placeholder="Ej. -12.0453">
+	<small>Formato: grados decimales. Usa negativo para sur.</small>
+
+	<label for="lon1">Longitud 1 (°):</label>
+	<input type="number" id="lon1" step="any" placeholder="Ej. -77.05">
+	<small>Formato: grados decimales. Usa negativo para oeste.</small>
+
+	<label for="lat2">Latitud 2 (°):</label>
+	<input type="number" id="lat2" step="any" placeholder="Ej. -4.61">
+	<small>Formato: grados decimales. Usa negativo para sur.</small>
+
+	<label for="lon2">Longitud 2 (°):</label>
+	<input type="number" id="lon2" step="any" placeholder="Ej. -77.05">
+	<small>Formato: grados decimales. Usa negativo para oeste.</small>
+
+
+    <button onclick="calcularDistancia()">Calcular distancia</button>
+    <div id="result"></div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    const map = L.map('map').setView([-6, -77], 5);
+
+    // Tile layer confiable (CartoDB Light)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© OpenStreetMap, © CartoDB',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    let markers = [];
+    let lineaMeridional = null;
+
+    function calcularDistancia() {
+      const lat1 = parseFloat(document.getElementById('lat1').value);
+      const lon1 = parseFloat(document.getElementById('lon1').value);
+      const lat2 = parseFloat(document.getElementById('lat2').value);
+      const lon2 = parseFloat(document.getElementById('lon2').value);
+      const R = 6371.0;
+
+      const resultEl = document.getElementById('result');
+      if ([lat1, lon1, lat2, lon2].some(isNaN)) {
+        resultEl.innerText = "Por favor, completa todas las coordenadas.";
+        return;
+      }
+
+      const deltaLat = Math.abs((lat2 - lat1) * Math.PI / 180);
+      const distancia = R * deltaLat;
+
+      resultEl.innerHTML = `📏 <b>Distancia meridional:</b> ${distancia.toFixed(3)} km`;
+
+      // Limpiar marcadores y línea anteriores
+      markers.forEach(m => map.removeLayer(m));
+      markers = [];
+      if (lineaMeridional) {
+        map.removeLayer(lineaMeridional);
+        lineaMeridional = null;
+      }
+
+      const punto1 = L.latLng(lat1, lon1);
+      const punto2 = L.latLng(lat2, lon2);
+
+      const marker1 = L.marker(punto1).addTo(map)
+        .bindPopup(`📍 Punto 1<br>Lat: ${lat1.toFixed(4)}°<br>Lon: ${lon1.toFixed(4)}°`);
+      const marker2 = L.marker(punto2).addTo(map)
+        .bindPopup(`📍 Punto 2<br>Lat: ${lat2.toFixed(4)}°<br>Lon: ${lon2.toFixed(4)}°`);
+      markers.push(marker1, marker2);
+
+      // Dibujar línea vertical (misma longitud que lon1)
+      lineaMeridional = L.polyline([
+        [lat1, lon1],
+        [lat2, lon1]
+      ], {
+        color: 'red',
+        weight: 3,
+        dashArray: '4, 6',
+        opacity: 0.9
+      }).addTo(map);
+
+      map.fitBounds(L.latLngBounds([punto1, punto2]), { padding: [50, 50] });
+
+      setTimeout(() => marker1.openPopup(), 300);
+    }
+  </script>
+</body>
+</html>

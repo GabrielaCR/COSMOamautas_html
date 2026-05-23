@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99147880-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-99147880-2');
+</script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CosmoAmautas - Donate</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ===================================================================
+         ESTILOS DEL TAB DE DONACIONES — COSMOamautas
+         (Se apoyan en el mismo css/style.css del sitio; aquí solo se
+          agregan los componentes nuevos de esta página.)
+         =================================================================== -->
+    <style>
+    .breadcrumb .breadcrumb_iner_item h2 { color:#fff; }
+    .breadcrumb .breadcrumb_iner_item p { color:#e9edff; font-size:17px; margin-top:14px; font-weight:300; }
+
+    .donate-section { padding:90px 0 100px; }
+
+    /* Selector de idioma */
+    .donate-lang { text-align:center; margin-bottom:25px; }
+    .donate-lang > span { display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#9aa0b3; margin-bottom:12px; }
+    .lang-pills { display:inline-flex; border:1px solid #d6dcf5; border-radius:30px; overflow:hidden; }
+    .lang-pills a { padding:9px 28px; font-size:14px; font-weight:700; color:#2d43d2; text-decoration:none; transition:.35s; }
+    .lang-pills a.active { background-image:linear-gradient(to left,#0028a0,#0028a0,#59bfe6); color:#fff; }
+    .lang-pills a:not(.active):hover { background:#eef1ff; }
+
+    /* Intro */
+    .donate-intro h2 { color:#0028a0; font-weight:700; margin-bottom:22px; line-height:1.25; }
+    .donate-intro .lead-sub { font-size:18px; color:#2058A2; font-weight:500; line-height:31px; margin-bottom:20px; }
+
+    /* Espacios para fotos */
+    .photo-ph { position:relative; background:linear-gradient(135deg,#eef2ff,#dde7ff); border:2px dashed #8aa0e6; border-top-left-radius:30px; border-bottom-right-radius:30px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:30px 26px; min-height:250px; margin-bottom:30px; }
+    .photo-ph i { font-size:44px; color:#7184d6; margin-bottom:14px; }
+    .photo-ph .ph-title { font-weight:700; font-size:15px; color:#2d43d2; }
+    .photo-ph .ph-help { font-size:12.5px; color:#7f8bbd; margin-top:8px; line-height:20px; max-width:260px; }
+    .photo-ph.tall { min-height:360px; height:100%; }
+
+   /* Tarjeta de impacto $120 (versión menos prominente — azul suave) */
+    .impact-card { position:relative; background:#e8eefb; border:1px solid #cdd8f1; border-top-left-radius:46px; border-bottom-right-radius:46px; color:#3a3f52; padding:52px 46px; }
+    .impact-num { display:block; font-size:66px; font-weight:700; line-height:1; color:#0028a0; }
+    .impact-num-label { display:block; font-size:18px; font-weight:600; color:#2058A2; margin:8px 0 26px; }
+    .impact-card h3 { color:#0028a0; font-size:23px; font-weight:700; margin-bottom:8px; }
+    .impact-sub { color:#5a6175; font-size:14.5px; line-height:24px; margin-bottom:24px; }
+    .impact-item { display:flex; align-items:flex-start; margin-bottom:17px; }
+    .impact-item i { font-size:19px; color:#2d43d2; margin-right:16px; margin-top:3px; min-width:24px; text-align:center; }
+    .impact-item p { color:#4a4f63; font-size:14.5px; line-height:24px; }
+    .impact-result { margin-top:24px; padding-top:22px; border-top:1px solid #cdd8f1; font-size:15px; color:#3a3f52; line-height:25px; }
+    .impact-result strong { color:#0028a0; }
+
+    /* Nota "dona lo que quieras" */
+    .note-box { background:#eef7fb; border-left:4px solid #59bfe6; padding:26px 32px; border-radius:8px; }
+    .note-box p { font-size:14.5px; }
+    .note-box strong { color:#0028a0; }
+
+    /* Tarjeta de PayPal (versión prominente — caja azul con contraste) */
+    .paypal-card { position:relative; overflow:hidden; text-align:center; background-image:linear-gradient(135deg,#001a6e,#0a2f9c 55%,#2058A2); border:none; border-top-left-radius:46px; border-bottom-right-radius:46px; padding:58px 40px; box-shadow:0 28px 55px rgba(0,30,120,.32); }
+    .paypal-card::after { content:""; position:absolute; inset:0; background-image:radial-gradient(1.6px 1.6px at 18% 28%,#fff,transparent),radial-gradient(1.4px 1.4px at 68% 18%,#fff,transparent),radial-gradient(1.2px 1.2px at 48% 62%,#fff,transparent),radial-gradient(1.7px 1.7px at 85% 72%,#fff,transparent),radial-gradient(1.2px 1.2px at 33% 84%,#fff,transparent),radial-gradient(1.3px 1.3px at 92% 38%,#fff,transparent); opacity:.55; pointer-events:none; }
+    .paypal-card > * { position:relative; z-index:1; }
+    .paypal-card h3 { color:#fff; font-size:27px; font-weight:700; margin-bottom:14px; }
+    .paypal-card .paypal-intro { max-width:580px; margin:0 auto 30px; color:#cdd8ff; }
+    .paypal-btn { display:inline-block; padding:21px 62px; font-size:20px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; color:#001a6e !important; text-decoration:none; background-image:linear-gradient(135deg,#ffe07a,#ffcd3c); border-top-left-radius:26px; border-bottom-right-radius:26px; border-top-right-radius:4px; border-bottom-left-radius:4px; box-shadow:0 14px 30px rgba(0,0,0,.35); transition:.4s; }
+    .paypal-btn:hover { transform:translateY(-3px); box-shadow:0 18px 38px rgba(0,0,0,.45); color:#001a6e; }
+    .paypal-btn i { margin-right:11px; }
+    .editor-note { margin:20px auto 0; max-width:540px; font-size:12.5px; color:#9097ab; background:#fff7e8; border:1px dashed #e8c984; border-radius:8px; padding:11px 18px; }
+    .editor-note strong { color:#c98a14; }
+    .paypal-secure { margin-top:22px; font-size:13px; color:#c4cffb; }
+    .paypal-secure i { color:#ffd35c; margin-right:7px; }
+
+    /* Caja de confianza */
+    .trust-box { background:#f7f9ff; border-left:4px solid #2d43d2; padding:26px 32px; border-radius:8px; }
+    .trust-box p { font-size:14.5px; }
+    .trust-box strong { color:#2d43d2; }
+
+    /* Cierre */
+    .donate-close { text-align:center; font-family:"Playfair Display",serif; font-size:25px; color:#0028a0; font-style:italic; margin:60px auto 0; max-width:700px; line-height:38px; }
+
+    .donate-section .section_tittle h2 { color:#0028a0; }
+    .mt-block { margin-top:60px; }
+
+    @media (max-width:767px){
+      .donate-section{ padding:55px 0 65px; }
+      .impact-card,.paypal-card{ padding:36px 26px; }
+      .impact-num{ font-size:50px; }
+      .paypal-btn{ padding:17px 38px; font-size:17px; }
+      .donate-close{ font-size:20px; line-height:31px; }
+      .breadcrumb .breadcrumb_iner_item p{ font-size:15px; }
+      .mt-block{ margin-top:35px; }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="ti-menu"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="maestros.html">EDUCATION</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="convocatoria.html">CONVOCATORIA.2025</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="astroclub.html"> ASTROCLUBS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="videojuegos.html"> GAMES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="material.html"> MATERIALS </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="instructores.html"> TEAM </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="donate.html"> DONATE </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>Donate</h2>
+                            <h3>Bring the universe to a rural classroom in Peru</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end-->
+
+    <!--::donate part start::-->
+    <section class="donate-section">
+        <div class="container">
+
+            <!-- ============ SELECTOR DE IDIOMA / LANGUAGE ============ -->
+            <div class="donate-lang">
+                <span>Idioma / Language</span>
+                <div class="lang-pills">
+                    <a href="contribuye.html">Español</a>
+                    <a href="donate.html" class="active">English</a>
+                </div>
+            </div>
+
+            <!-- ============ INTRO ============ -->
+            <div class="row align-items-center donate-intro mt-block">
+                <div class="col-lg-6">
+                    <h2>Bring the universe to a rural classroom in Peru</h2>
+                    <p class="lead-sub">Your gift helps a rural school teacher open an astronomy club — sparking a love of science and the stars in more than 50 children.</p>
+                    <p>In the Andes, watching the sky is a heritage centuries old. At CosmoAmautas, we keep that heritage alive: we train and empower teachers in rural schools across Peru to open astroclubs — spaces where astronomy becomes a doorway to science, curiosity, and new STEM opportunities for their students. We believe that exploring and understanding the universe should never be a privilege for just a few.</p>
+                </div>
+                <div class="col-lg-6">
+                    <!-- ============================================================
+                         ESPACIO PARA FOTO 1
+                         Para usar una foto real, reemplaza TODO el bloque
+                         <div class="photo-ph tall"> ... </div> de abajo por:
+                         <img src="img/donacion-1.jpg" alt="Students looking at the sky"
+                              style="width:100%;border-top-left-radius:30px;border-bottom-right-radius:30px;">
+                         ============================================================ -->
+                   <img src="img/donate/1.jpg" alt="Estudiantes mirando el cielo"
+                              style="width:100%;border-top-left-radius:30px;border-bottom-right-radius:30px;">
+                </div>
+            </div>
+
+            <!-- ============ IMPACT: US$120 ============ -->
+            <div class="row align-items-center mt-block">
+                <div class="col-lg-7">
+                    <div class="impact-card">
+                        <span class="impact-num" style="font-size:42px; line-height:1.15;">Contribute what you can</span>
+                        <span class="impact-num-label">Every gift counts.</span>
+                        <h3>What does your donation achieve?</h3>
+                        <p class="impact-sub">Your donation adds to a shared goal. For every US$100 we raise together, we make a complete astroclub possible. With that amount, a rural school teacher receives:</p>
+                        <div class="impact-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <p>Training to teach astronomy and lead their astroclub.</p>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-box-open"></i>
+                            <p>A full set of materials, shipped directly to their school — no matter how remote.</p>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <p>Three months of close mentoring from our team.</p>
+                        </div>
+                        <div class="impact-result">The result: <strong>a brand-new astroclub reaching at least 50 students</strong> in rural areas.</div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <!-- ============================================================
+                         ESPACIO PARA FOTO 2  (reemplazar igual que la Foto 1)
+                         ============================================================ -->
+                   <img src="img/donate/2.png" alt="Estudiantes mirando el cielo"
+                              style="width:100%;border-top-left-radius:30px;border-bottom-right-radius:30px;">
+                </div>
+            </div>
+
+            <!-- ============ GIVE WHAT YOU CAN ============ 
+            <div class="row mt-block">
+                <div class="col-lg-12">
+                    <div class="note-box">
+                        <p><strong>You don't have to give the full US$100.</strong> Contribute whatever amount you can and wish to — every donation adds up to open the next astroclub. When several people come together to reach US$100, they change the story of an entire classroom.</p>
+                    </div>
+                </div>
+            </div>-->
+
+            <!-- ============ PHOTO GALLERY ============ -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_tittle text-center" style="margin-top:70px;margin-bottom:40px;">
+                        <h2>Stories you make possible</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- ESPACIO PARA FOTO 3 (reemplazar por <img src="img/donacion-3.jpg" ...>) -->
+                <div class="col-lg-4 col-md-6">
+                      <img src="img/donate/3.png" alt=""
+                              style="width:100%;border-top-left-radius:30px;border-bottom-right-radius:30px;">
+                </div>
+                <!-- ESPACIO PARA FOTO 4 -->
+                <div class="col-lg-4 col-md-6">
+                   <img src="img/donate/4.jpeg" alt=""
+                              style="width:100%;border-top-left-radius:30px;border-bottom-right-radius:30px;">
+                </div>
+                <!-- ESPACIO PARA FOTO 5 -->
+                <div class="col-lg-4 col-md-6">
+                   <img src="img/donate/5.jpg" alt=""
+                              style="width:100%;border-top-left-radius:30px;border-bottom-right-radius:30px;">
+                </div>
+                
+            </div>
+
+            <!-- ============ PAYPAL CARD ============ -->
+            <div class="row mt-block">
+                <div class="col-lg-12">
+                    <div class="paypal-card">
+                        <h3>Make your donation now</h3>
+                        <p class="paypal-intro">Your contribution reaches COSMOamautas securely. You can give from any country, with any card — whether or not you have a PayPal account.</p>
+
+                        <!-- ================================================================
+                             >>> PEGA AQUÍ TU ENLACE DE PAYPAL <<<
+                             Reemplaza  href="#"  por tu link real, por ejemplo:
+                             href="https://paypal.me/CosmoAmautas"
+                             ================================================================ -->
+                        <a href="https://www.paypal.com/donate?hosted_button_id=BG6WBUY2QBVUN" class="paypal-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-paypal"></i> Donate with PayPal
+                        </a>
+
+
+                        <p class="paypal-secure"><i class="fas fa-lock"></i> Secure payment processed by PayPal</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ TRUST ============ -->
+            <div class="row mt-block">
+                <div class="col-lg-12">
+                    <div class="trust-box">
+                        <p><strong>CosmoAmautas</strong> is a registered nonprofit civil association based in Peru. Every contribution goes entirely toward bringing astronomy to more rural schools.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ CLOSING ============ -->
+            <p class="donate-close">&ldquo;Thank you for helping us make sure no child in Peru grows up without looking at the stars.&rdquo;</p>
+
+        </div>
+    </section>
+    <!--::donate part end::-->
+
+    <!--::footer_part start::-->
+    <footer class="footer_part">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_footer_part">
+                        <img src="img/footer_logo.png" class="footer_logo" alt="">
+                        <h3> WWW.COSMOAMAUTAS.ORG </h3>
+                        <p> E-mail: cosmoamautas@gmail.com </p>
+                        <div class="footer_icon social_icon">
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon"><i class="fab fa-facebook-f fa-2x" style="color:white"></i></a></li>
+                                <li><a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw" class="single_social_icon"><i class="fab fa-twitter fa-2x" style="color:white"></i></a></li>
+                                <li><a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon"><i class="fab fa-instagram fa-2x" style="color:white"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright_text">
+                        <p> Copyright &copy; CosmoAmautas 2021 </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--::footer_part end::-->
+
+    <!-- jquery plugins here-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <!-- masonry js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- owl carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- slick js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/countdown.jquery.min.js"></script>
+    <script src="js/timer.js"></script>
+    <!-- contact js -->
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

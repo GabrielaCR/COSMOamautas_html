@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99147880-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-99147880-2');
+</script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>COSMOamautas - Gracias por tu donación</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ===================================================================
+         ESTILOS DE LAS PÁGINAS DE ESTADO — COSMOamautas
+         (Se apoyan en el mismo css/style.css del sitio.)
+         =================================================================== -->
+    <style>
+    .breadcrumb .breadcrumb_iner_item h2 { color:#fff; }
+
+    /* Selector de idioma */
+    .donate-lang { text-align:center; margin-bottom:10px; }
+    .donate-lang > span { display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#9aa0b3; margin-bottom:12px; }
+    .lang-pills { display:inline-flex; border:1px solid #d6dcf5; border-radius:30px; overflow:hidden; }
+    .lang-pills a { padding:9px 28px; font-size:14px; font-weight:700; color:#2d43d2; text-decoration:none; transition:.35s; cursor:pointer; }
+    .lang-pills a.active { background-image:linear-gradient(to left,#0028a0,#0028a0,#59bfe6); color:#fff; }
+    .lang-pills a:not(.active):hover { background:#eef1ff; }
+
+    /* Páginas de estado */
+    .status-section { padding:80px 0 100px; }
+    .status-wrap { max-width:720px; margin:0 auto; text-align:center; }
+    .status-icon { width:112px; height:112px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:34px auto 28px; font-size:46px; }
+    .status-icon.ok { background:linear-gradient(135deg,#0a2f9c,#2058A2); color:#ffd35c; box-shadow:0 16px 38px rgba(0,30,120,.30); }
+    .status-icon.cancel { background:#eef2fb; border:2px solid #cdd8f1; color:#2d43d2; }
+    .status-title { color:#0028a0; font-size:34px; font-weight:700; margin-bottom:16px; line-height:1.25; }
+    .status-lead { font-size:18px; color:#2058A2; font-weight:500; line-height:30px; margin-bottom:20px; }
+    .status-text { color:#5a6175; font-size:15px; line-height:27px; margin-bottom:16px; }
+    .status-actions { margin-top:36px; }
+    .status-actions a { margin:8px 7px; }
+    .status-note { margin-top:34px; font-size:13px; color:#9097ab; line-height:21px; }
+    .status-mission { background:#eef7fb; border-left:4px solid #59bfe6; padding:24px 30px; border-radius:8px; text-align:left; margin-top:42px; }
+    .status-mission p { font-size:14.5px; color:#4a4f63; line-height:24px; }
+    .status-mission strong { color:#0028a0; }
+
+    /* Botones */
+    .btn-cosmo { display:inline-block; padding:15px 40px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; color:#fff !important; text-decoration:none; background-image:linear-gradient(to left,#0028a0,#0028a0,#59bfe6); background-size:200% auto; border-top-left-radius:22px; border-bottom-right-radius:22px; border-top-right-radius:4px; border-bottom-left-radius:4px; box-shadow:0 12px 24px rgba(0,40,160,.25); transition:.4s; }
+    .btn-cosmo:hover { background-position:right; transform:translateY(-2px); color:#fff; }
+    .btn-ghost { display:inline-block; padding:15px 40px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; color:#2d43d2 !important; text-decoration:none; background:#fff; border:1px solid #c2cbef; border-top-left-radius:22px; border-bottom-right-radius:22px; border-top-right-radius:4px; border-bottom-left-radius:4px; transition:.4s; }
+    .btn-ghost:hover { background:#eef1ff; color:#2d43d2; }
+
+    @media (max-width:767px){
+      .status-section{ padding:50px 0 65px; }
+      .status-title{ font-size:26px; }
+      .status-lead{ font-size:16px; }
+      .status-icon{ width:90px; height:90px; font-size:38px; }
+      .btn-cosmo,.btn-ghost{ padding:13px 28px; font-size:13.5px; }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="ti-menu"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="maestros.html">EDUCACIÓN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="convocatoria.html">CONVOCATORIA.2025</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="astroclub.html"> ASTROCLUBES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="videojuegos.html"> VIDEOJUEGOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="material.html"> MATERIAL </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="instructores.html"> EQUIPO </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="dona.html"> DONA </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2><span class="lang-content" data-lang="es">Gracias</span><span class="lang-content" data-lang="en" style="display:none;">Thank You</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end-->
+
+    <!--::status part start::-->
+    <section class="status-section">
+        <div class="container">
+
+            <!-- ============ SELECTOR DE IDIOMA / LANGUAGE ============ -->
+            <div class="donate-lang">
+                <span>Idioma / Language</span>
+                <div class="lang-pills">
+                    <a class="lang-btn active" data-lang="es">Español</a>
+                    <a class="lang-btn" data-lang="en">English</a>
+                </div>
+            </div>
+
+            <!-- ============ CONTENIDO EN ESPAÑOL ============ -->
+            <div class="status-wrap lang-content" data-lang="es">
+                <div class="status-icon ok"><i class="fas fa-star"></i></div>
+                <h2 class="status-title">¡Gracias por tu donación!</h2>
+                <p class="status-lead">Acabas de acercar el universo a un aula rural del Perú.</p>
+                <p class="status-text">Tu generosidad hará posible que un docente de una escuela rural reciba capacitación, materiales y acompañamiento para abrir su astroclub — y que decenas de niñas y niños miren las estrellas por primera vez con ojos de científicos.</p>
+                <p class="status-text">En COSMOamautas creemos que la curiosidad y el pensamiento científico no deberían depender del lugar donde naces. Gracias a personas como tú, ese sueño llega cada vez más lejos.</p>
+
+                <div class="status-actions">
+                    <a href="index.html" class="btn-cosmo">Volver al inicio</a>
+                    <a href="astroclub.html" class="btn-ghost">Conoce los astroclubs</a>
+                </div>
+
+                <div class="status-mission">
+                    <p><strong>Sigue de cerca el impacto de tu aporte.</strong> En nuestras redes sociales compartimos las historias de los astroclubs, los docentes y los estudiantes que tú ayudas a inspirar. Y si quieres ayudarnos aún más, comparte nuestra causa con tu familia y amigos: cada nueva persona acerca un poco más el cielo a otra escuela rural.</p>
+                </div>
+
+                <p class="status-note">Recibirás la confirmación de tu donación directamente de PayPal. Si tienes alguna pregunta, escríbenos a cosmoamautas@gmail.com.</p>
+            </div>
+
+            <!-- ============ CONTENIDO EN INGLÉS ============ -->
+            <div class="status-wrap lang-content" data-lang="en" style="display:none;">
+                <div class="status-icon ok"><i class="fas fa-star"></i></div>
+                <h2 class="status-title">Thank you for your donation!</h2>
+                <p class="status-lead">You've just brought the universe a little closer to a rural classroom in Peru.</p>
+                <p class="status-text">Your generosity will help a rural school teacher receive training, materials, and mentoring to open their astroclub — and help dozens of children look at the stars for the first time with a scientist's eyes.</p>
+                <p class="status-text">At COSMOamautas, we believe curiosity and scientific thinking should never depend on where you were born. Thanks to people like you, that dream reaches further every day.</p>
+
+                <div class="status-actions">
+                    <a href="index.html" class="btn-cosmo">Back to home</a>
+                    <a href="astroclub.html" class="btn-ghost">Discover the astroclubs</a>
+                </div>
+
+                <div class="status-mission">
+                    <p><strong>Follow the impact of your gift.</strong> On our social media we share the stories of the astroclubs, teachers, and students you help inspire. And if you'd like to help even more, share our cause with your family and friends: every new person brings the sky a little closer to another rural school.</p>
+                </div>
+
+                <p class="status-note">You'll receive confirmation of your donation directly from PayPal. If you have any questions, write to us at cosmoamautas@gmail.com.</p>
+            </div>
+
+        </div>
+    </section>
+    <!--::status part end::-->
+
+    <!--::footer_part start::-->
+    <footer class="footer_part">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_footer_part">
+                        <img src="img/footer_logo.png" class="footer_logo" alt="">
+                        <h3> WWW.COSMOAMAUTAS.ORG </h3>
+                        <p> E-mail: cosmoamautas@gmail.com </p>
+                        <div class="footer_icon social_icon">
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon"><i class="fab fa-facebook-f fa-2x" style="color:white"></i></a></li>
+                                <li><a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw" class="single_social_icon"><i class="fab fa-twitter fa-2x" style="color:white"></i></a></li>
+                                <li><a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon"><i class="fab fa-instagram fa-2x" style="color:white"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright_text">
+                        <p> Copyright &copy; CosmoAmautas 2021 </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--::footer_part end::-->
+
+    <!-- jquery plugins here-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <!-- masonry js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- owl carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <!-- slick js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/countdown.jquery.min.js"></script>
+    <script src="js/timer.js"></script>
+    <!-- contact js -->
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+
+    <!-- ===== Botón de idioma (cambia el contenido en la misma página) ===== -->
+    <script>
+    (function(){
+      var btns = document.querySelectorAll('.lang-btn');
+      var blocks = document.querySelectorAll('.lang-content');
+      function setLang(lang){
+        for (var i=0;i<blocks.length;i++){
+          blocks[i].style.display = (blocks[i].getAttribute('data-lang')===lang) ? '' : 'none';
+        }
+        for (var j=0;j<btns.length;j++){
+          if (btns[j].getAttribute('data-lang')===lang){ btns[j].classList.add('active'); }
+          else { btns[j].classList.remove('active'); }
+        }
+      }
+      for (var k=0;k<btns.length;k++){
+        btns[k].addEventListener('click', function(e){
+          e.preventDefault();
+          setLang(this.getAttribute('data-lang'));
+        });
+      }
+    })();
+    </script>
+</body>
+
+</html>

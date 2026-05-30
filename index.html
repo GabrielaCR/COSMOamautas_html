@@ -1,48 +1,170 @@
 <!doctype html>
 <html lang="es">
 
-<head>    
+<head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99147880-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-99147880-2');
 </script>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>COSMOamautas.org</title>
     <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
     <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- themify CSS -->
     <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- font awesome CSS -->
     <link rel="stylesheet" href="css/all.css">
-    <!-- flaticon CSS -->
     <link rel="stylesheet" href="css/flaticon.css">
-    <!-- magnific popup CSS -->
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- nice select CSS -->
     <link rel="stylesheet" href="css/nice-select.css">
-    <!-- swiper CSS --
     <link rel="stylesheet" href="css/slick.css">
-    <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+    /* ===== Selector de idioma — barra propia bajo el banner, a la derecha ===== */
+    .lang-bar { padding: 18px 0 4px; background: transparent; }
+    .lang-bar .donate-lang {
+        display: flex; justify-content: flex-end; align-items: center;
+        gap: 14px; margin: 0;
+    }
+    .lang-bar .donate-lang > span {
+        display: inline-block; font-size: 11px; letter-spacing: 2px;
+        text-transform: uppercase; color: #9aa0b3; margin: 0;
+    }
+    .donate-lang { text-align:center; margin:350px auto -125px; position:relative; z-index:3; }
+    .donate-lang > span { display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#9aa0b3; margin-bottom:12px; }
 
+    .lang-pills { display: inline-flex; border: 1px solid #d6dcf5; border-radius: 30px; overflow: hidden; }
+    .lang-pills a { padding: 7px 22px; font-size: 13px; font-weight: 700; color: #2d43d2; text-decoration: none; transition: .35s; cursor: pointer; }
+    .lang-pills a.active { background-image: linear-gradient(to left, #0028a0, #0028a0, #59bfe6); color: #fff; }
+    .lang-pills a:not(.active):hover { background: #eef1ff; }
+    @media (max-width:576px){
+        .lang-bar .donate-lang { justify-content: center; }
+    }
+
+    /* ===== Sección de Noticias — fondo azul estrellado, título dorado ===== */
+    .news_section {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0 95px;
+        background-image: linear-gradient(135deg,#001a6e,#0a2f9c 55%,#2058A2);
+        color: #fff;
+    }
+    .news_section::after {
+        content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .55;
+        background-image:
+            radial-gradient(1.6px 1.6px at 12% 22%, #fff, transparent),
+            radial-gradient(1.4px 1.4px at 28% 70%, #fff, transparent),
+            radial-gradient(1.3px 1.3px at 48% 14%, #fff, transparent),
+            radial-gradient(1.7px 1.7px at 68% 38%, #fff, transparent),
+            radial-gradient(1.2px 1.2px at 82% 78%, #fff, transparent),
+            radial-gradient(1.5px 1.5px at 92% 22%, #fff, transparent),
+            radial-gradient(1.1px 1.1px at 38% 92%, #fff, transparent),
+            radial-gradient(1.3px 1.3px at 58% 60%, #fff, transparent);
+    }
+    .news_section > * { position: relative; z-index: 1; }
+
+    .news_section .section_tittle h2 {
+        color: #ffd35c;
+        font-weight: 700;
+        position: relative; display: inline-block;
+        margin-bottom: 18px;
+    }
+    .news_section .section_tittle h2::after {
+        content: ""; display: block; width: 60px; height: 3px;
+        background: #ffd35c; border-radius: 3px;
+        margin: 14px auto 0;
+    }
+    .news_section .section_tittle p { color: #cdd8ff; font-size: 15px; max-width: 580px; margin: 0 auto; }
+
+    /* Tarjetas */
+    .news_card {
+        background: #fff;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 18px 40px rgba(0,0,0,.30);
+        transition: .35s;
+        margin: 10px 6px 36px;
+    }
+    .news_card:hover { transform: translateY(-6px); box-shadow: 0 26px 52px rgba(0,0,0,.42); }
+    .news_card_img { position: relative; height: 210px; overflow: hidden; }
+    .news_card_img a { display:block; height:100%; }
+    .news_card_img img { width:100%; height:100%; object-fit:cover; transition:.5s; }
+    .news_card:hover .news_card_img img { transform: scale(1.07); }
+    .news_card_body { padding: 22px 26px 26px; }
+    .news_date {
+        display: inline-block;
+        background: linear-gradient(135deg,#ffe07a,#ffcd3c);
+        color: #001a6e;
+        font-size: 11px; font-weight: 700; letter-spacing: 1px;
+        padding: 5px 14px; border-radius: 14px;
+        margin-bottom: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,.20);
+    }
+    .news_title { font-size: 17px; font-weight: 700; color: #0028a0; line-height: 1.35; margin-bottom: 10px; min-height: 46px; }
+    .news_desc { font-size: 13.5px; color: #5a6175; line-height: 22px; margin: 0; }
+
+    /* Owl carousel — nav y dots en gold sobre azul */
+    .news_carousel .owl-nav { text-align: center; margin-top: 14px; }
+    .news_carousel .owl-nav button {
+        width: 40px; height: 40px; border-radius: 50% !important;
+        background: rgba(255,255,255,.12) !important;
+        border: 1px solid rgba(255,213,92,.55) !important;
+        color: #ffd35c !important;
+        margin: 0 6px !important; font-size: 18px !important;
+        transition: .3s;
+    }
+    .news_carousel .owl-nav button:hover {
+        background: #ffd35c !important; color: #001a6e !important;
+        border-color: #ffd35c !important;
+    }
+    .news_carousel .owl-dots { text-align: center; margin-top: 16px; }
+    .news_carousel .owl-dots .owl-dot span {
+        width: 10px; height: 10px; background: rgba(255,255,255,.30);
+        border-radius: 50%; margin: 0 5px; transition: .3s;
+    }
+    .news_carousel .owl-dots .owl-dot.active span {
+        background: #ffd35c; width: 28px; border-radius: 5px;
+    }
+
+    @media (max-width:767px){
+        .news_section { padding: 60px 0 55px; }
+        .news_card_img { height: 180px; }
+    }
+
+    /* ===== Sección de Logros / Achievements ===== */
+    .achievements_section { padding: 0px 0 80px; background: linear-gradient(180deg,#ffffff 0%,#eef2fb 100%); }
+    .achievements_section .section_tittle { margin-bottom: 60px; }
+    .achievements_section .section_tittle h2 { color: #0028a0; font-weight: 700; position: relative; display: inline-block; margin-bottom: 16px; }
+    .achievements_section .section_tittle h2::after { content:""; display:block; width:60px; height:3px; background:#ffd54f; border-radius:3px; margin:14px auto 0; }
+    .achievements_section .section_tittle p { color:#5a6175; font-size:15px; max-width:620px; margin:0 auto; }
+
+    .achievement_card { position:relative; background:#fff; border:1px solid #e4e8fb; border-top-left-radius:30px; border-bottom-right-radius:30px; padding:52px 28px 30px; margin-top:30px; margin-bottom:25px; text-align:center; box-shadow:0 14px 36px rgba(0,30,120,.08); transition:.35s; }
+    .achievement_card:hover { transform:translateY(-6px); box-shadow:0 24px 48px rgba(0,30,120,.18); }
+    .achievement_ribbon { position:absolute; top:-30px; left:50%; transform:translateX(-50%); width:62px; height:62px; border-radius:50%; background:linear-gradient(135deg,#ffe07a,#ffcd3c); color:#001a6e; display:flex; align-items:center; justify-content:center; font-size:24px; box-shadow:0 10px 22px rgba(255,205,60,.50); }
+    .achievement_year { display:inline-block; background:#0028a0; color:#fff; font-size:11px; font-weight:700; letter-spacing:1px; padding:4px 14px; border-radius:12px; margin-bottom:14px; text-transform:uppercase; }
+    .achievement_title { font-size:18px; font-weight:700; color:#0028a0; margin-bottom:6px; min-height:46px; line-height:1.3; }
+    .achievement_org { font-size:12.5px; color:#2058A2; font-weight:600; letter-spacing:.3px; margin-bottom:14px; }
+    .achievement_desc { font-size:13.5px; color:#5a6175; line-height:22px; margin-bottom:20px; }
+    .achievement_photo { width:100%; height:140px; border:2px dashed #c2cbef; border-radius:10px; overflow:hidden; background:linear-gradient(135deg,#eef2ff,#dde7ff); display:flex; align-items:center; justify-content:center; color:#7184d6; font-size:12px; text-align:center; }
+    .achievement_photo a { display:block; width:100%; height:100%; }
+    .achievement_photo img { width:100%; height:100%; object-fit:cover; }
+    .achievement_photo i { font-size:24px; margin-bottom:6px; display:block; }
+
+    @media (max-width:767px){ .achievements_section{ padding:70px 0 50px; } }
+
+    </style>
 </head>
 
 <body>
     <div id="fb-root"></div>
-	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
-    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+
     <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
@@ -50,55 +172,18 @@
                 <div class="col-lg-10">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="ti-menu"></span>
                         </button>
-
-                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
-                            id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">HOME</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="maestros.html">EDUCACIÓN</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="convocatoria.html">CONVOCATORIA.2025</a>
-                                </li>
-                                
-                               <!--    <li class="nav-item">
-                                    <a class="nav-link" href="ciencia0.html"> INVESTIGACIÓN </a>
-                                </li> 
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="escuelas.html">DIVULGACIÓN</a>
-                                </li>-->
-                                                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="astroclub.html"> ASTROCLUBES</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="videojuegos.html"> VIDEOJUEGOS</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="material.html"> MATERIAL </a>
-                                </li>     
-                                                    
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="instructores.html"> EQUIPO </a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contribuye.html"> CONTRIBUYE </a>
-                                </li>
-
+                                <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                                <li class="nav-item"><a class="nav-link" href="maestros.html">EDUCACIÓN</a></li>
+                                <li class="nav-item"><a class="nav-link" href="astroclub.html"> ASTROCLUBES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="videojuegos.html"> VIDEOJUEGOS</a></li>
+                                <li class="nav-item"><a class="nav-link" href="material.html"> MATERIAL </a></li>
+                                <li class="nav-item"><a class="nav-link" href="instructores.html"> EQUIPO </a></li>
+                                <li class="nav-item"><a class="nav-link" href="contribuye.html"> CONTRIBUYE </a></li>
                             </ul>
                         </div>
                     </nav>
@@ -108,320 +193,563 @@
     </header>
     <!-- Header part end-->
 
-    
-    
-    <!-- banner part start-->
+    <!-- BANNER -->
     <section class="banner_part">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-7">
                     <div class="banner_text text-center">
                         <div class="banner_text_iner">
-                            <img src="img/logo_white2.png" alt="logo"> 
-                            <h3>  Proyecto de educación científica.</h3> <p>  Acercando el pensamiento científico y la fascinación por el cosmos a los niños y jóvenes del Perú. </p>
-                           <!--  <a href="#" class="btn_2">About us</a>-->
+                            <img src="img/logo_white2.png" alt="logo">
+                            <h3>
+                                <span class="lang-content" data-lang="es">Astronomía que inspira, ciencia que transforma.</span>
+                                <span class="lang-content" data-lang="en" style="display:none;">Astronomy that inspires, science that transforms.</span>
+                            </h3>
+                            <p>
+                                <span class="lang-content" data-lang="es">CosmoAmautas es una asociación sin fines de lucro que usa la astronomía para fortalecer docentes como agentes de cambio, inspirar estudiantes y potenciar el desarrollo científico en todo el país.</span>
+                                <span class="lang-content" data-lang="en" style="display:none;">CosmoAmautas is a nonprofit association that uses astronomy to empower teachers as agents of change, inspire students and boost scientific development across the country.</span>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="banner_video">
                         <img src="img/kids2.jpeg" alt="">
-                     <!--    <div class="banner_video_iner">
-                            
-                            <div class="extends_video">
-                                <a id="play-video_1" class="video-play-button popup-youtube"
-                                    href="https://www.youtube.com/watch?v=pBFQdxA-apI">
-                                    <span class="fas fa-play"></span>
-                                </a>
-                            </div>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sample-text-area" style="padding: 450px 0 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-lg-4">
+                    <!-- Selector de idioma / Language toggle -->
+                    <div class="donate-lang" style="margin: 0 0 6px;">
+                        <span>Idioma / Language</span>
+                        <div class="lang-pills">
+                            <a class="lang-btn active" data-lang="es">Español</a>
+                            <a class="lang-btn" data-lang="en">English</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- banner part start-->
 
-    <!-- service part start-->
-    <section class="service_part">
+
+ 
+    <!-- SERVICIO -->
+     <section class="service_part" style="padding-top: 60px;">
         <div class="container">
+
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6 col-sm-10">
                     <div class="service_text">
-                        <h31><br><br><br><br><br><br>Proyecto impulsado por la Oficina de Astronomía para el Desarrollo de la Unión Astronomica Internacional
-                         </h31>
-                        <h3> . 
-                         </h3>
-                        
-                        <p> La ciencia nos hace libres. COSMOamautas busca sembrar la curiosidad y el pensamiento científico en los niños y jóvenes peruanos, por medio de la astronomía y la exploración del Universo. <br><br>
-                            COSMOamautas se divide en cuatro diversos programas de educación de astronomía, enfocados en diferentes niveles educativos: visitas a colegios, clubes escolares de astronomía, capacitación a maestros, y proyectos de investigación universitarios. <br> <br>
-                            Uno de los enfoques principales de nuestro programa es fomentar la participación de las mujeres y niñas en ciencia. Por medio de visitas y presentaciones de astrofísicas peruanas profesionales buscamos demostrar a temprana edad que la ciencia también es una carrera de chicas.
-                            
+                        <h31>
+                            <span class="lang-content" data-lang="es">CosmoAmautas es una asociación sin fines de lucro que impulsa una educación científica de calidad, descentralizada, equitativa e intercultural en Perú.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">CosmoAmautas is a nonprofit association driving high-quality, decentralized, equitable and intercultural science education in Peru.</span>
+                        </h31>
+                        <h3>.</h3>
+
+                        <!-- ES -->
+                        <p class="lang-content" data-lang="es">La ciencia nos hace libres. Usamos la astronomía como puerta de entrada a la ciencia para despertar la curiosidad, fortalecer el pensamiento crítico y acercar oportunidades científicas a niñas, niños y jóvenes.<br><br>
+                            Capacitamos a docentes en astronomía, método científico, aprendizaje por indagación e innovación educativa en ciencias. La astronomía permite conectar de manera natural conceptos de física, matemática, química, biología, tecnología y ciencias ambientales, por lo que ofrece una herramienta poderosa para enriquecer las clases de Ciencia y Tecnología con experiencias prácticas, motivadoras y alineadas con el currículo escolar.<br><br>
+                            Además, acompañamos la creación de Astroclubes escolares, desarrollamos materiales accesibles para contextos de baja conectividad e impulsamos una Red de Embajadores CosmoAmautas: docentes líderes que multiplican la metodología en sus regiones, fortaleciendo comunidades educativas locales y contribuyendo a una mejora sostenible de la enseñanza científica.<br><br>
+                            Por eso trabajamos para que cada estudiante pueda aprender haciendo ciencia, conectar el Universo con su propia cultura y descubrir que la ciencia también puede ser parte de su futuro.
+                        </p>
+
+                        <!-- EN -->
+                        <p class="lang-content" data-lang="en" style="display:none;">Science sets us free. We use astronomy as a gateway to science to spark curiosity, strengthen critical thinking, and bring scientific opportunities to girls, boys, and youth.<br><br>
+                            We train teachers in astronomy, the scientific method, inquiry-based learning, and educational innovation in science. Astronomy naturally connects concepts from physics, math, chemistry, biology, technology, and environmental science, offering a powerful tool to enrich Science and Technology classes with hands-on, motivating experiences aligned with the school curriculum.<br><br>
+                            We also support the creation of school AstroClubs, develop accessible materials for low-connectivity contexts, and lead the CosmoAmautas Ambassadors Network: teacher leaders who multiply the methodology across their regions, strengthening local educational communities and contributing to a sustainable improvement of science teaching.<br><br>
+                            That's why we work so that every student can learn by doing science, connect the Universe with their own culture, and discover that science can be part of their future too.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-7 col-xl-6">
                     <div class="service_part_iner">
                         <div class="row">
-                        
-                           <div class="col-lg-6 col-sm-6">
-                                <div class="single_service_text">
-                                    <i class="flaticon-goal"></i>
-                                    <h4> Investigación </h4>
-                                    <p> Investigación científica en astrofísica de alto nivel. Hecha en Perú, por estudiantes universitarios de Física.</p>
-                                    <a href="ciencia0.html"> Más información</a> 
-                                </div>
-                            </div>  
-                            
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="single_service_text ">
-                                    <i class="flaticon-goal"></i>
-                                    <h4>Educación</h4>
-                                    <p> Capacitación gratuita en astrofísica a docentes de primaria y secundaria a nivel nacional.</p>
-                                    <a href="maestros.html">Más información</a>
-                                </div>
-                            </div>
-
-
-                             <div class="col-lg-6 col-sm-6">
- 
-                            </div>           
-                              
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_service_text">
                                     <i class="flaticon-goal"></i>
-                                    <h4> Divulgación</h4>
-                                    <p> Divulgación de Astronomía. Visitas a escuelas y comunidades.</p>
-                                    <a href="escuelas.html">Más información</a>
+                                    <h4><span class="lang-content" data-lang="es">Maestros</span><span class="lang-content" data-lang="en" style="display:none;">Teachers</span></h4>
+                                    <p>
+                                        <span class="lang-content" data-lang="es">Capacitamos a docentes en astronomía, método científico y aprendizaje por indagación para fortalecer la enseñanza de las ciencias.</span>
+                                        <span class="lang-content" data-lang="en" style="display:none;">We train teachers in astronomy, the scientific method and inquiry-based learning to strengthen science teaching.</span>
+                                    </p>
+                                    <a href="maestros.html">
+                                        <span class="lang-content" data-lang="es">Más información</span>
+                                        <span class="lang-content" data-lang="en" style="display:none;">Learn more</span>
+                                    </a>
                                 </div>
                             </div>
-                                               
-
-                             <!-- <div class="col-lg-6 col-sm-6">
+                            <div class="col-lg-6 col-sm-6">
                                 <div class="single_service_text">
                                     <i class="flaticon-goal"></i>
-                                    <h4> Investigación </h4>
-                                    <p> Investigación científica de alto nivel por estudiantes peruanos.</p>
-                                    <a href="maestros.html"> Más información</a> 
+                                    <h4><span class="lang-content" data-lang="es">Astroclubes</span><span class="lang-content" data-lang="en" style="display:none;">AstroClubs</span></h4>
+                                    <p>
+                                        <span class="lang-content" data-lang="es">Acompañamos clubes escolares donde estudiantes exploran el Universo con actividades científicas, observación del cielo y proyectos.</span>
+                                        <span class="lang-content" data-lang="en" style="display:none;">We support school clubs where students explore the Universe through hands-on science, sky observation and projects.</span>
+                                    </p>
+                                    <a href="escuelas.html">
+                                        <span class="lang-content" data-lang="es">Más información</span>
+                                        <span class="lang-content" data-lang="en" style="display:none;">Learn more</span>
+                                    </a>
                                 </div>
-                            </div>  -->
-
-                      
-
-                            
+                            </div>
+                            <div class="col-lg-6 col-sm-6"></div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_service_text">
+                                    <i class="flaticon-goal"></i>
+                                    <h4><span class="lang-content" data-lang="es">Investigación</span><span class="lang-content" data-lang="en" style="display:none;">Research</span></h4>
+                                    <p>
+                                        <span class="lang-content" data-lang="es">Impulsamos la iniciación científica y la mentoría en astronomía para estudiantes universitarios peruanos.</span>
+                                        <span class="lang-content" data-lang="en" style="display:none;">We promote scientific initiation and astronomy mentoring for Peruvian university students.</span>
+                                    </p>
+                                    <a href="ciencia0.html">
+                                        <span class="lang-content" data-lang="es">Más información</span>
+                                        <span class="lang-content" data-lang="en" style="display:none;">Learn more</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- service part end-->
 
+<!-- ========== SECCIÓN DE LOGROS / ACHIEVEMENTS ========== -->
+<section class="achievements_section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="section_tittle text-center">
+                    <h2>
+                        <span class="lang-content" data-lang="es">Nuestros logros</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Our achievements</span>
+                    </h2>
+                    <p>
+                        <span class="lang-content" data-lang="es">El trabajo de CosmoAmautas ha sido reconocido por instituciones de prestigio nacional e internacional.</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">The work of CosmoAmautas has been recognized by leading national and international institutions.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    <!-- intro_video_bg start-->
-    <section class="intro_video_bg"   style= "height: 1000%">
-        <div class="container" >
-             <div class="row justify-content-between align-items-center">
-                 
-                 <div class="col-lg-7">
-                    <div class="intro_video_iner text-center">
-                        <image src="img/topics_cosmoamautas.jpeg" style="width: 100%"  alt="">  
-                                          
-                            
-                            <!-- <h2> Únete al equipo COSMOamautas </h2>   
-                            	<image src="img/poster.jpeg" style="width: 100%"  alt="">  
+        <div class="row achievements_row">
 
-                        
-                        <p> Eres un estudiante universitario apasionado por la astrofísica, y con ganas de mejorar la educación cientifica del país? quieres participar en el proyecto?</p>
-                        <a href="instructores.html" class="btn_2">Únete a nosotros!</a>-->
+            <!-- LOGRO 1 — OAD -->
+            <div class="col-lg-4 col-md-6">
+                <div class="achievement_card">
+                    <div class="achievement_ribbon"><i class="fas fa-trophy"></i></div>
+                    <span class="achievement_year">IAU OAD</span>
+                    <h4 class="achievement_title">
+                        <span class="lang-content" data-lang="es">Ganadores del Fondo OAD</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">OAD Fund Winners</span>
+                    </h4>
+                    <p class="achievement_org">Office of Astronomy for Development &mdash; IAU</p>
+                    <p class="achievement_desc">
+                        <span class="lang-content" data-lang="es">Nuestro proyecto fue seleccionado en el 2020 y el 2022 por la Oficina de Astronomía para el Desarrollo de la Unión Astronómica Internacional para financiar talleres y AstroClubes. Los procesos de selección fueron altamente competitivos, sobresaliendo entre iniciativas de desarrollo de todo el mundo. </span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Our project was selected twice by the IAU's Office of Astronomy for Development to fund workshops and AstroClubs.</span>
+                    </p>
+                    <!-- Foto/documento: reemplaza el placeholder por <a href="img/logros/oad.jpg" class="achievement-popup"><img src="img/logros/oad.jpg" alt=""></a> -->
+                    <div class="achievement_photo">
+                        <a href="https://astro4dev.org/cosmoamautas-astrophysics-teaching-material-for-high-school-spanish/" class="achievement-popup"><img src="img/client_logo/iau_logo.png" alt=""></a>
                     </div>
-                 </div>
-                     
-             <div class="col-lg-5">
-              <div class="intro_video_iner text-center">
-           				 <h2> <br> Capacitación de docentes</h2>
-                        <h2> <font color="orange" >  Convocatoria Cerrada. <br> CosmoAmautas 2025 </h2>
+                </div>
+            </div>
 
-                        <a href="convocatoria.html" class="btn_2"> Más información aquí </a>    
+            <!-- LOGRO 2 — Ruralia -->
+            <div class="col-lg-4 col-md-6">
+                <div class="achievement_card">
+                    <div class="achievement_ribbon"><i class="fas fa-medal"></i></div>
+                    <span class="achievement_year">
+                        <span class="lang-content" data-lang="es">RURALIA 2025</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Finalists</span>
+                    </span>
+                    <h4 class="achievement_title">
+                        <span class="lang-content" data-lang="es">Finalistas Premio Ruralia</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Ruralia Award</span>
+                    </h4>
+                    <p class="achievement_org">
+                        <span class="lang-content" data-lang="es">Innovación educativa en zonas rurales</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Educational innovation in rural areas</span>
+                    </p>
+                    <p class="achievement_desc">
+                        <span class="lang-content" data-lang="es">Reconocidos como finalistas del premio Ruralia por nuestro impacto en la educación científica en escuelas rurales del Perú, en particular por nuestro proyecto de Embajadores y replicas locales de nuestras capacitaciones.</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Selected as Ruralia Award finalists for our impact on science education in rural Peruvian schools.</span>
+                    </p>
+                    <div class="achievement_photo">
+                        <a href="img/logros/oad.jpg" class="achievement-popup"><img src="img/client_logo/ruralia1.png" alt=""></a>
                     </div>
-                 </div>
-                     
+                </div>
+            </div>
+
+            <!-- LOGRO 3 — BID -->
+            <div class="col-lg-4 col-md-6">
+                <div class="achievement_card">
+                    <div class="achievement_ribbon"><i class="fas fa-star"></i></div>
+                    <span class="achievement_year">BID / CONCYTEC</span>
+                    <h4 class="achievement_title">
+                        <span class="lang-content" data-lang="es">Referente en América Latina</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Benchmark in Latin America</span>
+                    </h4>
+                    <p class="achievement_org">
+                        <span class="lang-content" data-lang="es">Banco Interamericano de Desarrollo (BID)</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Inter-American Development Bank (BID)</span>
+                    </p>
+                    <p class="achievement_desc">
+                        <span class="lang-content" data-lang="es">Seleccionados para el Banco Interamericano de Desarrollo y CONCYTEC como una de las iniciativas de referencia en América Latina por su enfoque pedagógico de calidad, su impacto territorial en zonas rurales del Perú, y contribución destacada al cierre de brechas de género en vocaciones científicas.</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Selected for the Inter-American Development Bank and CONCYTEC as one of Latin America's benchmark initiatives, for its high-quality pedagogical approach, its impact in rural areas of Peru, and outstanding contribution to closing gender gaps in scientific careers.</span>
+                    </p>
+                    <div class="achievement_photo">
+                        <a href="img/logros/BID.pdf" target="_blank"><img src="img/client_logo/BID.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ========== fin sección de Logros ========== -->
+
+    <!-- =========================================================
+         SECCIÓN DE NOTICIAS — Slider (Owl Carousel)
+         Las tarjetas avanzan automáticamente de derecha a izquierda.
+         Para editar, agregar o quitar noticias: duplicar/eliminar
+         los bloques <div class="news_card">...</div>.
+         Para la imagen: cambiar la ruta en <img src="img/news/...">.
+         ========================================================= -->
+    <section class="news_section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <h2>
+                            <span class="lang-content" data-lang="es">Noticias</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">News</span>
+                        </h2>
+                        <p>
+                            <span class="lang-content" data-lang="es">Lo último que está pasando en CosmoAmautas y nuestros AstroClubes.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">The latest from CosmoAmautas and our AstroClubs.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news_carousel owl-carousel owl-theme">
+
+                <!-- NOTICIA -1 -->
+                <div class="news_card">
+                    <div class="news_card_img">
+                        <a href="img/topics_cosmoamautas.jpeg" class="news-popup"><img src="img/noticias/DIA.png" alt=""></a>
+                    </div>
+                    <div class="news_card_body">
+                        <span class="news_date">24 MAY 2026</span>
+                        <h4 class="news_title">
+                            <span class="lang-content" data-lang="es">CosmoAmautas en el DIA 2026</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">CosmoAmautas at the DIA 2026 (Cajamarca)</span>
+                        </h4>
+                        <p class="news_desc">
+                            <span class="lang-content" data-lang="es">CosmoAmautas participa con un stand por primera vez en el Día Internacional de la Astronomía (DIA) 2026 en Cajamarca.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">CosmoAmautas participates for the first time in the Astronomy International Day (2026) in Cajamarca.</span>
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- NOTICIA 1 -->
+                <div class="news_card">
+                    <div class="news_card_img">
+                        <a href="img/topics_cosmoamautas.jpeg" class="news-popup"><img src="img/topics_cosmoamautas.jpeg" alt=""></a>
+                    </div>
+                    <div class="news_card_body">
+                        <span class="news_date">15 MAY 2025</span>
+                        <h4 class="news_title">
+                            <span class="lang-content" data-lang="es">CosmoAmautas 2025: comenzamos el taller</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">CosmoAmautas 2025: the workshop begins</span>
+                        </h4>
+                        <p class="news_desc">
+                            <span class="lang-content" data-lang="es">Iniciamos las sesiones virtuales con 50 docentes seleccionados de 21 regiones del Perú.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">We kicked off our virtual sessions with 50 selected teachers from 21 regions of Peru.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NOTICIA 2 -->
+                <div class="news_card">
+                    <div class="news_card_img">
+                        <a href="img/astroclubes2025/1.png" class="news-popup"><img src="img/astroclubes2025/1.png" alt=""></a>
+                    </div>
+                    <div class="news_card_body">
+                        <span class="news_date">01 ABR 2025</span>
+                        <h4 class="news_title">
+                            <span class="lang-content" data-lang="es">Nuevos AstroClubes en marcha</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">New AstroClubs underway</span>
+                        </h4>
+                        <p class="news_desc">
+                            <span class="lang-content" data-lang="es">Docentes de todo el país inauguran sus AstroClubes antes del taller, con cientos de estudiantes inscritos.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Teachers across the country are launching their AstroClubs ahead of the workshop, with hundreds of students enrolled.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NOTICIA 5 -->
+                <div class="news_card">
+                    <div class="news_card_img">
+                        <a href="img/libro_cosmoamautas.png" class="news-popup"><img src="img/libro_cosmoamautas.png" alt=""></a>
+                    </div>
+                    <div class="news_card_body">
+                        <span class="news_date">01 FEB 2025</span>
+                        <h4 class="news_title">
+                            <span class="lang-content" data-lang="es">Nueva Edición 2025: Libro de astrofísica </span>
+                            <span class="lang-content" data-lang="en" style="display:none;">New 2025 edicition: astrophysics textbook</span>
+                        </h4>
+                        <p class="news_desc">
+                            <span class="lang-content" data-lang="es">Publicamos actualizaciones (incl. resultados del JWST) de nuestro libro de 160 páginas con contenido y actividades para docentes.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">We released an updated edition (incl. JWST results) of our 160-page book with content and activities for teachers.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NOTICIA 4 -->
+                <div class="news_card">
+                    <div class="news_card_img">
+                        <a href="img/nature0.png" class="news-popup"><img src="img/nature0.png" alt=""></a>
+                    </div>
+                    <div class="news_card_body">
+                        <span class="news_date">10 OCT 2022</span>
+                        <h4 class="news_title">
+                            <span class="lang-content" data-lang="es">Publicamos en Nature Astronomy</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Published in Nature Astronomy</span>
+                        </h4>
+                        <p class="news_desc">
+                            <span class="lang-content" data-lang="es">Nuestra experiencia y resultados aparecen en una publicación internacional sobre educación en astronomía.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Our experience and results featured in an international publication on astronomy education.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NOTICIA 5 -->
+                <div class="news_card">
+                    <div class="news_card_img">
+                        <a href="img/astroclubes2022/1.png" class="news-popup"><img src="img/astroclubes2022/1.png" alt=""></a>
+                    </div>
+                    <div class="news_card_body">
+                        <span class="news_date">15 AGO 2022</span>
+                        <h4 class="news_title">
+                            <span class="lang-content" data-lang="es">Experimento de Eratóstenes a escala nacional</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Eratosthenes experiment at a national scale</span>
+                        </h4>
+                        <p class="news_desc">
+                            <span class="lang-content" data-lang="es">Varios AstroClubes colaboraron para medir el radio de la Tierra siguiendo el método de Eratóstenes.</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Multiple AstroClubs joined forces to measure the Earth's radius following Eratosthenes' method.</span>
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- =================== AGREGA AQUÍ TUS NOTICIAS ===================
+                     Para una noticia nueva, copia y pega un bloque <div class="news_card">
+                     y cambia: imagen (src), fecha, título y descripción (ES y EN).
+                ================================================================= -->
+
             </div>
         </div>
     </section>
-    <!-- intro_video_bg part start-->
+    <!-- ::news section end:: -->
 
-    <!-- about part end-->
+    <!-- intro_video_bg : CONVOCATORIA -->
+    <section class="intro_video_bg" style="height: 1000%">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-7">
+                    <div class="intro_video_iner text-center">
+                        <image src="img/topics_cosmoamautas.jpeg" style="width: 100%" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="intro_video_iner text-center">
+                        <h2><br>
+                            <span class="lang-content" data-lang="es">Capacitación de docentes</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Teacher Training</span>
+                        </h2>
+                        <h2><font color="orange">
+                            <span class="lang-content" data-lang="es">Convocatoria Cerrada. <br> CosmoAmautas 2025</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Applications Closed. <br> CosmoAmautas 2025</span>
+                        </font></h2>
+                        <a href="convocatoria.html" class="btn_2">
+                            <span class="lang-content" data-lang="es">Más información aquí</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">More information here</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redes sociales -->
     <section class="about_us">
         <div class="container">
             <div class="row justify-content-between align-items-center">
-	 
                 <div class="col-lg-6">
-			 
-	             		<h2> <br> <br> <font color=#2058A2> Síguenos en nuestras redes: 
-
-
-						 <br> <br> </h2>
-						 		 
-                   		<a class="twitter-timeline" data-lang="es" data-width="350" data-height="500" data-theme="dark" href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw">Tweets by CosmoAmautas</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                   <!-- <div class="about_us_img">
-                        <img src="img/top_service.png" alt="">
-                    </div> -->
+                    <h2><br><br><font color=#2058A2>
+                        <span class="lang-content" data-lang="es">Síguenos en nuestras redes:</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Follow us on social media:</span>
+                        <br><br></font></h2>
+                    <a class="twitter-timeline" data-lang="es" data-width="350" data-height="500" data-theme="dark" href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw">Tweets by CosmoAmautas</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 <div class="col-lg-6">
-            		 <h2> <br> <br> <br><br> </h2>
-						<br><br>
+                    <h2><br><br><br><br></h2>
+                    <br><br>
                     <div class="breadcrumb_iner_item text-right">
-              			<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCOSMOamautas%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"> 
-                   		</iframe>
-
-                   	</div>
-    				 <h2> <br> <br></h2>
-                 </div>   
-         
-                     <!-- <div class="about_us_text">
-                         
-                         <h5>
-                            Edición<br><span> 2021</span>
-                        </h5>
-                        <h2>About COSMOamautas:</h2>
-                        <p> The COSMOamautas program (from the quechua word amauta=teacher/knowledgeable person) aims to bring teacher training workshops in Astronomy and Space Science to high school teachers in rural areas in Peru. <br> We have selected rural communities where the first professional national telescopes have been recently built, yet their presence has made no significant impact on the science awareness in the area due to the lack of funding and concerted outreach efforts. In the first edition of the program we will target the central-andean region of Junin.
-                            We will introduce the school teachers to different areas of astronomy through hands-on experimental activities to be used in the classroom and  motivate the creation of self-sustaining high school Astronomy Clubs led by the teachers and hosting motivated students.<br> 
-							This workshop additionally includes outreach visits to schools, giving particular emphasis to the role of women in astronomy and promoting gender-equality. For more effective empowerment of young girls to identify themselves as scientists, the volunteer trainer team is led by young Peruvian female astronomers with professional research careers at international institutions around the globe, supported by local female physics undergraduate volunteers. The multiplicative impact of our project will enrich the science education of >3000 students otherwise unaware of the astronomy activities carried out in their region.  </p>
-     
-                       
-                    </div> -->
-                   
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCOSMOamautas%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <h2><br><br></h2>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- about part end-->
 
-   
-
-
-    <!--::our client part start::-->
+    <!-- Colaboradores -->
     <section class="client_part padding_bottom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h3>.<br>. </h3>
-                        <h2>Nuestros colaboradores: </h2>
+                        <h3>.<br>.</h3>
+                        <h2>
+                            <span class="lang-content" data-lang="es">Nuestros colaboradores:</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Our partners:</span>
+                        </h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="client_logo owl-carousel">
-                        <div class="single_client_logo">
-                            <img src="img/client_logo/iau_logo.png"  alt="">
-                        </div>
-                        <div class="single_client_logo">
-                            <img src="img/client_logo/igp.png" alt="">
-                        </div>
-                        <div class="single_client_logo">
-                            <img src="img/client_logo/iau.png" alt="">
-                        </div>
-                       <div class="single_client_logo">
-                            <img src="img/client_logo/eso.jpg" alt="">
-                        </div>
-                       <div class="single_client_logo">
-                            <img src="img/client_logo/oas.png" alt="">
-                        </div>
-                       <div class="single_client_logo">
-                            <img src="img/client_logo/conida.png" alt="">
-                        </div>
-                       <div class="single_client_logo">
-                            <img src="img/client_logo/afari2.png" alt="">
-                        </div>
+                        <div class="single_client_logo"><img src="img/client_logo/iau_logo.png" alt=""></div>
+                        <div class="single_client_logo"><img src="img/client_logo/igp.png" alt=""></div>
+                        <div class="single_client_logo"><img src="img/client_logo/iau.png" alt=""></div>
+                        <div class="single_client_logo"><img src="img/client_logo/eso.jpg" alt=""></div>
+                        <div class="single_client_logo"><img src="img/client_logo/oas.png" alt=""></div>
+                        <div class="single_client_logo"><img src="img/client_logo/conida.png" alt=""></div>
+                        <div class="single_client_logo"><img src="img/client_logo/afari2.png" alt=""></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--::our client part end::-->
-
-    <!--::footer_part here::-->
 
     <footer class="footer_part">
         <div class="container">
-        
             <div class="row justify-content-around">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="single_footer_part">
-                        <img src="img/footer_logo.png" class="footer_logo" alt="">
-                        <h3> WWW.COSMOAMAUTAS.ORG </h3> 
-                         <p> E-mail: cosmoamautas@gmail.com </p>    
-                        
-                        <div class="footer_icon social_icon">
-                        		<ul class="list-unstyled">
-                           			 <li><a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon"><i class="fab fa-facebook-f fa-2x" style="color:white"></i></a></li>
-                            		<li><a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw"  class="single_social_icon"><i class="fab fa-twitter fa-2x" style="color:white"></i></a></li>
-                            		<li><a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon"><i class="fab fa-instagram fa-2x" style="color:white""></i></a></li>
-                        		</ul>
-                    		</div>     	
- 					</div>
- 				</div>
- 				
-			
+                <div class="col-sm-6 col-lg-4"><div class="single_footer_part">
+                    <img src="img/footer_logo.png" class="footer_logo" alt="">
+                    <h3> WWW.COSMOAMAUTAS.ORG </h3>
+                    <p> E-mail: cosmoamautas@gmail.com </p>
+                    <div class="footer_icon social_icon"><ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon"><i class="fab fa-facebook-f fa-2x" style="color:white"></i></a></li>
+                        <li><a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw" class="single_social_icon"><i class="fab fa-twitter fa-2x" style="color:white"></i></a></li>
+                        <li><a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon"><i class="fab fa-instagram fa-2x" style="color:white"></i></a></li>
+                    </ul></div>
+                </div></div>
             </div>
-            
             <hr>
- 
             <div class="row">
-            
-                <div class="col-lg-6">
-                    <div class="copyright_text">
-                        <p> Copyright &copy; CosmoAmautas 2021 </p>
-                    </div>
-                </div>     
-               
-                <div class="col-lg-6">
-
-                </div>
+                <div class="col-lg-6"><div class="copyright_text"><p> Copyright &copy; CosmoAmautas 2021 </p></div></div>
+                <div class="col-lg-6"></div>
             </div>
-            
         </div>
     </footer>
-    <!--::footer_part end::-->
-    
-    
-   
-    <!-- jquery plugins here-->
 
     <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
     <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- easing js -->
     <script src="js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
+
     <script src="js/swiper.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/jquery.smooth-scroll.min.js"></script>
-    <!-- swiper js -->
     <script src="js/masonry.pkgd.js"></script>
-    <!-- particles js -->
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
-    <!-- swiper js -->
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/countdown.jquery.min.js"></script>
     <script src="js/timer.js"></script>
-    <!-- contact js -->
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/contact.js"></script>
-    <!-- custom js -->
     <script src="js/custom.js"></script>
-</body>
 
+    <!-- Slider de noticias + popup imagen -->
+    <script>
+    (function(){
+      if (typeof jQuery === 'undefined') return;
+      jQuery(document).ready(function($){
+        $('.news_carousel').owlCarousel({
+            loop: true,
+            margin: 24,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 4500,
+            autoplayHoverPause: true,
+            smartSpeed: 700,
+            navText: ['&#10094;','&#10095;'],
+            responsive: { 0:{items:1}, 600:{items:2}, 992:{items:3} }
+        });
+        if ($.fn.magnificPopup) {
+            $('.news_carousel').magnificPopup({
+                delegate: 'a.news-popup',
+                type: 'image',
+                gallery: { enabled: true },
+                closeOnContentClick: true
+            }) ;
+        }
+        if ($.fn.magnificPopup) {
+             $('.achievements_row').magnificPopup({
+            delegate: 'a.achievement-popup',
+             type: 'image',
+            gallery: { enabled: true },
+            closeOnContentClick: true
+            });
+        }
+      });
+    })();
+    </script>
+
+    <!-- Toggle de idioma -->
+    <script>
+    (function(){
+      var btns = document.querySelectorAll('.lang-btn');
+      var blocks = document.querySelectorAll('.lang-content');
+      function setLang(lang){
+        for (var i=0;i<blocks.length;i++){
+          blocks[i].style.display = (blocks[i].getAttribute('data-lang')===lang) ? '' : 'none';
+        }
+        for (var j=0;j<btns.length;j++){
+          if (btns[j].getAttribute('data-lang')===lang){ btns[j].classList.add('active'); }
+          else { btns[j].classList.remove('active'); }
+        }
+      }
+      for (var k=0;k<btns.length;k++){
+        btns[k].addEventListener('click', function(e){
+          e.preventDefault();
+          setLang(this.getAttribute('data-lang'));
+        });
+      }
+    })();
+    </script>
+</body>
 </html>

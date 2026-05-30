@@ -2,90 +2,53 @@
 <html lang="es">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>COSMOamautas - Astro Clubes</title>
+    <title>COSMOamautas - AstroClubes / AstroClubs</title>
     <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
     <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- themify CSS -->
     <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- font awesome CSS -->
     <link rel="stylesheet" href="css/all.css">
-    <!-- flaticon CSS -->
     <link rel="stylesheet" href="css/flaticon.css">
-    <!-- magnific popup CSS -->
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- nice select CSS -->
     <link rel="stylesheet" href="css/nice-select.css">
-    <!-- swiper CSS -->
     <link rel="stylesheet" href="css/slick.css">
-    <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+    .breadcrumb .breadcrumb_iner_item h2 { color:#fff; }
+    .breadcrumb .breadcrumb_iner_item h2 .lang-content { font-size: inherit; font-weight: inherit; color: inherit; line-height: inherit; display: inline; }
+    .donate-lang { text-align:center; margin:-45px auto 25px; position:relative; z-index:3; }
+    .donate-lang > span { display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#9aa0b3; margin-bottom:12px; }
+    .lang-pills { display:inline-flex; border:1px solid #d6dcf5; border-radius:30px; overflow:hidden; }
+    .lang-pills a { padding:9px 28px; font-size:14px; font-weight:700; color:#2d43d2; text-decoration:none; transition:.35s; cursor:pointer; }
+    .lang-pills a.active { background-image:linear-gradient(to left,#0028a0,#0028a0,#59bfe6); color:#fff; }
+    .lang-pills a:not(.active):hover { background:#eef1ff; }
+    </style>
 </head>
 
 <body>
-    <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-10">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="ti-menu"></span>
                         </button>
-
-                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
-                            id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">HOME</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="maestros.html">EDUCACIÓN</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="convocatoria.html">CONVOCATORIA.2025</a>
-                                </li>
-                                
-                                
-                               <!--    <li class="nav-item">
-                                    <a class="nav-link" href="ciencia0.html"> INVESTIGACIÓN </a>
-                                </li> 
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="escuelas.html">DIVULGACIÓN</a>
-                                </li>-->
-                                                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="astroclub.html"> ASTROCLUBES</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="videojuegos.html"> VIDEOJUEGOS</a>
-                                </li>
-
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="material.html"> MATERIAL </a>
-                                </li>
-                                                                
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="instructores.html"> EQUIPO </a>
-                                </li> 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contribuye.html"> CONTRIBUYE </a>
-                                </li>
-
+                                <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                                <li class="nav-item"><a class="nav-link" href="maestros.html">EDUCACIÓN</a></li>
+                                <!--<li class="nav-item"><a class="nav-link" href="convocatoria.html">CONVOCATORIA.2025</a></li> -->
+                                <li class="nav-item"><a class="nav-link" href="astroclub.html"> ASTROCLUBES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="videojuegos.html"> VIDEOJUEGOS</a></li>
+                                <li class="nav-item"><a class="nav-link" href="material.html"> MATERIAL </a></li>
+                                <li class="nav-item"><a class="nav-link" href="instructores.html"> EQUIPO </a></li>
+                                <li class="nav-item"><a class="nav-link" href="contribuye.html"> CONTRIBUYE </a></li>
                             </ul>
                         </div>
                     </nav>
@@ -93,626 +56,255 @@
             </div>
         </div>
     </header>
-    <!-- Header part end-->
 
-
-    <!-- breadcrumb start-->
     <section class="breadcrumb breadcrumb_bg">
+        <div class="container"><div class="row"><div class="col-lg-12">
+            <div class="breadcrumb_iner"><div class="breadcrumb_iner_item text-center">
+                <h2><span class="lang-content" data-lang="es">Astroclubes</span><span class="lang-content" data-lang="en" style="display:none;">AstroClubs</span></h2>
+            </div></div>
+        </div></div></div>
+    </section>
+
+    <section class="sample-text-area">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">
-                            <h2>Astroclubes</h2>
-                        </div>
-                    </div>
+
+            <!-- Selector de idioma / Language toggle -->
+            <div class="donate-lang">
+                <span>Idioma / Language</span>
+                <div class="lang-pills">
+                    <a class="lang-btn active" data-lang="es">Español</a>
+                    <a class="lang-btn" data-lang="en">English</a>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- breadcrumb start-->
 
-    
-	<!-- Start Sample Area -->
+            <!-- ============ CONTENIDO EN ESPAÑOL ============ -->
+            <div class="lang-content" data-lang="es">
+                <div class="intro_video_iner text-center">
+                    <h4><font color=black>
+                        En ediciones anteriores, docentes de distintas regiones del Perú transformaron sus aulas y comunidades creando AstroClubes.<br>
+                        Desde <strong>zonas rurales hasta ciudades</strong>, estos clubes se convirtieron en espacios donde niñas y niños observan el cielo con telescopios,<br>
+                        construyen modelos del sistema solar, aprenden a leer mapas estelares y debaten sobre los misterios del universo.<br><br>
 
+                        Muchos docentes, que empezaron <strong>sin experiencia previa en astronomía</strong>, hoy son <strong>líderes locales en educación científica</strong><br>
+                        y agentes de cambio en sus colegios. Sus estudiantes participan en ferias, comparten sus proyectos con otras escuelas<br>
+                        y se motivan a seguir carreras en ciencia y tecnología.<br><br>
 
+                        🌟 Tú puedes ser el próximo o la próxima docente en transformar la curiosidad de tus estudiantes en pasión por el conocimiento.<br>
+                        Con el acompañamiento de CosmoAmautas, ¡tu AstroClub también puede marcar la diferencia!<br><br>
+                    </font></h4>
 
+                    <h2><font color=#2058A2>¿Qué son los AstroClubes CosmoAmautas?</font></h2>
 
-	
-<!-- 
-<section class="sample-text-area">
-		<div class="container box_1170">
-            
-            <img src="img/clubes_dibujo.jpg" alt="">
-			<p class="sample-text">
-                (Ilustración: Giovanni Tazza, copyright: Diario El Comercio) <br><br>.
-			</p>
-            <h4>
-                 Fomentaremos la creación de Clubes de Astronomía 'Astroclubes' liderados por profesores capacitados en instrucción no tradicional, empleando experimentos,
-                demostraciones y proyectos prácticos para que estudiantes aprendan haciendo.
-                <br><br>
-                Estos clubes se llevarán a cabo después de clases de forma semanal
-                o quincenal. Los clubes serán dirigidos por los docentes participantes del taller de capacitación y contará a su vez con materiales 
-                y el asesoramiento remoto de los instructores internacionales y nacionales durante la duración del club.  
-                <br> <br>
-                Este método de enseñanza, complementario al tradicional de clases, busca desarrollar
-                y potenciar la curiosidad y creatividad de los niños a través de la investigación.
-            </h4>    
-		</div> 	
- 
-	</section>
- -->
+                    <h4><font color=black>
+                        Son espacios <strong>extracurriculares</strong> creados y liderados por docentes egresados del taller,
+                        donde estudiantes curiosos <br>aprenden haciendo, experimentan y aplican el método científico de manera activa y colaborativa.<br><br>
 
-	<!-- End Sample Area -->
-	
-	
-	<!-- Start Blog Area -->
-	<section class="sample-text-area">
+                        Además de fortalecer la educación científica, los AstroClubes tienen un enfoque inclusivo y buscan<br>
+                        <strong>inspirar especialmente a niñas y mujeres</strong>, aumentando su confianza en sus capacidades científicas <br>y mostrándoles que las carreras científicas también son para ellas.<br><br>
 
-        	<div class="intro_video_iner text-center">
- <h4>  <font color=black>       	
-        	En ediciones anteriores, docentes de distintas regiones del Perú transformaron sus aulas y comunidades creando AstroClubes.<br>
-        	 Desde <strong>zonas rurales hasta ciudades</strong>, estos clubes se convirtieron en espacios donde niñas y niños observan el cielo con telescopios, <br>
-        	 construyen modelos del sistema solar, aprenden a leer mapas estelares y debaten sobre los misterios del universo.<br><br>
+                        Según reportes de docentes desde 2021, los AstroClubes se caracterizan por:<br><br>
 
-			Muchos docentes, que empezaron <strong>sin experiencia previa en astronomía</strong>, hoy son <strong>líderes locales en educación científica</strong> <br>
-			y agentes de cambio en sus colegios. Sus estudiantes participan en ferias, comparten sus proyectos con otras escuelas<br>
-			 y se motivan a seguir carreras en ciencia y tecnología.<br><br>
+                        🌟 Grupos de entre 8 y 20 estudiantes inscritos.<br>
+                        🌟 Reuniones quincenales o mensuales de aproximadamente 2 horas, por las tardes.<br>
+                        🌟 Clubes activos por más de un año; algunos superan los tres años.<br>
+                        🌟 Espacios variados: laboratorios, aulas y áreas abiertas.<br>
+                        🌟 Actividades que incluyen indagación científica, observaciones astronómicas, <br>construcción de modelos, uso de simuladores, charlas, debates y participación en ferias.<br><br>
 
-			🌟 Tú puedes ser el próximo o la próxima docente en transformar la curiosidad de tus estudiantes en pasión por el conocimiento. <br>
-			Con el acompañamiento de CosmoAmautas, ¡tu AstroClub también puede marcar la diferencia!<br><br>
-			 </font> </h4>
-			
-                         <h2>  <font color=#2058A2>¿Qué son los AstroClubes CosmoAmautas?  </font> </h2>
+                        <strong>Actividades destacadas:</strong><br><br>
 
-<h4>  <font color=black>
-			Son espacios <strong>extracurriculares</strong> creados y liderados por docentes egresados del taller,
-			 donde estudiantes curiosos <br>aprenden haciendo, experimentan y aplican el método científico de manera activa y colaborativa.<br><br>
+                        ✨ Observación de eclipses.<br>
+                        ✨ El experimento de Eratóstenes en colaboración con otros AstroClubes.<br>
+                        ✨ Pasacalles y desfiles para promover la astronomía en la comunidad.<br>
+                        ✨ Ferias de ciencia y observación nocturna con telescopios.<br><br>
 
-			Además de fortalecer la educación científica, los AstroClubes tienen un enfoque inclusivo y buscan<br>
-			 <strong>inspirar especialmente a niñas y mujeres</strong>, incrementando su confianza en sus capacidades científicas <br>y mostrándoles que carreras científicas también son para ellas.<br><br>
-			 
-			Según reportes de docentes desde 2021, los AstroClubes se caracterizan por:<br><br>
+                        Los docentes coinciden: sus estudiantes se muestran muy entusiasmados e interesados, y <br>demuestran un creciente interés por la ciencia.
+                    </font></h4>
+                </div>
+            </div>
 
-🌟 Grupos de entre 8 y 20 estudiantes inscritos.<br>
-🌟 Reuniones quincenales o mensuales de aproximadamente 2 horas, en las tardes<br>
-🌟 Clubes activos por más de un año; algunos superan los tres años.<br>
-🌟 Espacios variados: laboratorios, aulas y áreas abiertas.<br>
-🌟 Actividades que incluyen indagación científica, observaciones astronómicas, <br>construcción de modelos, uso de simuladores, charlas, debates y participación en ferias.<br><br>
- 
-<strong> Actividades destacadas:</strong><br><br>
+            <!-- ============ CONTENIDO EN INGLÉS ============ -->
+            <div class="lang-content" data-lang="en" style="display:none;">
+                <div class="intro_video_iner text-center">
+                    <h4><font color=black>
+                        In previous editions, teachers from across Peru transformed their classrooms and communities by creating AstroClubs.<br>
+                        From <strong>rural areas to cities</strong>, these clubs became spaces where children observe the sky through telescopes,<br>
+                        build models of the solar system, learn to read star maps and discuss the mysteries of the universe.<br><br>
 
-✨ Observación de eclipses.<br>
-✨ El experimento de Eratóstenes en colaboración con otros AstroClubes.<br>
-✨ Pasacalles y desfiles para promover la astronomía en la comunidad.<br>
-✨ Ferias de ciencia y observación nocturna con telescopios.<br>
+                        Many teachers who started <strong>with no previous astronomy experience</strong> are now <strong>local leaders in science education</strong><br>
+                        and agents of change in their schools. Their students take part in fairs, share their projects with other schools<br>
+                        and find new motivation to pursue careers in science and technology.<br><br>
 
-Docentes coinciden: sus estudiantes se muestran muy entusiasmados e interesados y <br>demuestran un creciente interés por la ciencia.
+                        🌟 You could be the next teacher to turn your students' curiosity into a passion for knowledge.<br>
+                        With CosmoAmautas' support, your AstroClub can make a difference too!<br><br>
+                    </font></h4>
 
- </font> </h4>
+                    <h2><font color=#2058A2>What are the CosmoAmautas AstroClubs?</font></h2>
 
+                    <h4><font color=black>
+                        They are <strong>extracurricular</strong> spaces created and led by teachers who have completed our workshop,
+                        where curious students <br>learn by doing, experiment, and actively apply the scientific method in a collaborative way.<br><br>
 
+                        Beyond strengthening science education, the AstroClubs have an inclusive focus and aim to<br>
+                        <strong>especially inspire girls and women</strong>, building their confidence in their scientific abilities <br>and showing them that scientific careers are also for them.<br><br>
 
+                        Based on teachers' reports since 2021, the AstroClubs are characterized by:<br><br>
+
+                        🌟 Groups of between 8 and 20 enrolled students.<br>
+                        🌟 Biweekly or monthly meetings of about 2 hours, in the afternoons.<br>
+                        🌟 Clubs active for over a year; some have lasted more than three years.<br>
+                        🌟 A range of settings: laboratories, classrooms and open spaces.<br>
+                        🌟 Activities including scientific inquiry, astronomical observations, <br>model building, simulators, talks, debates and science fair participation.<br><br>
+
+                        <strong>Highlight activities:</strong><br><br>
+
+                        ✨ Eclipse observation.<br>
+                        ✨ The Eratosthenes experiment carried out in collaboration with other AstroClubs.<br>
+                        ✨ Parades and processions to promote astronomy in the community.<br>
+                        ✨ Science fairs and night observation sessions with telescopes.<br><br>
+
+                        Teachers agree: their students are highly enthusiastic and engaged, and <br>show a growing interest in science.
+                    </font></h4>
+                </div>
+            </div>
+
+            <!-- Stats — comunes -->
             <div class="row justify-content">
-
-                <div class="col-lg-4"> </div>
+                <div class="col-lg-4"></div>
                 <div class="col-lg-4">
                     <div class="text-center about_btn">
-
-						<div class="banner_item">
-						
+                        <div class="banner_item">
                             <div class="single_item">
-                                <h2> <span class="count">21</span></h2>
-                                <h5>Regiones</h5>
+                                <h2><span class="count">21</span></h2>
+                                <h5><span class="lang-content" data-lang="es">Regiones</span><span class="lang-content" data-lang="en" style="display:none;">Regions</span></h5>
                             </div>
-						
                             <div class="single_item">
-                                <h2> <span class="count">83</span></h2>
-                                <h5>Nuevos AstroClubes</h5>
+                                <h2><span class="count">83</span></h2>
+                                <h5><span class="lang-content" data-lang="es">Nuevos AstroClubes</span><span class="lang-content" data-lang="en" style="display:none;">New AstroClubs</span></h5>
                             </div>
-                            
-                            
                             <div class="single_item">
                                 <h2>+<span class="count">2000</span></h2>
-                                <h5>Estudiantes inscritos en Astroclubes</h5>
+                                <h5><span class="lang-content" data-lang="es">Estudiantes inscritos en Astroclubes</span><span class="lang-content" data-lang="en" style="display:none;">Students enrolled in AstroClubs</span></h5>
                             </div>
-
                         </div>
                     </div>
                 </div>
- 			    </div>	
-			</div>	
-	
-			<hr class="new1">
-
-            
-        	<div class="intro_video_iner text-center">
-                         <h2>  <font color=#2058A2> <br><br>Nuestros AstroClubes 2025: <br><br><br> </font> </h2>
- 					
-			<img src="img/astroclubes2025/1.png" width="600" height="600" > <br>
-            <img src="img/astroclubes2025/2.png" width="425" height="425" > 
-            <img src="img/astroclubes2025/3.png" width="425" height="425" > 
-            <img src="img/astroclubes2025/4.png" width="425" height="425" > 
-			<img src="img/astroclubes2025/5.png" width="425" height="425" > 
-            <img src="img/astroclubes2025/6.png" width="425" height="425" > 
-            <img src="img/astroclubes2025/7.png" width="425" height="425" > 
-            <img src="img/astroclubes2025/8.png" width="425" height="425" > 
-			<img src="img/astroclubes2025/9.png" width="425" height="425" > 
-            <img src="img/astroclubes2025/10.png" width="425" height="425" > 
-						 	<hr class="new1">
             </div>
-            
-        	<div class="intro_video_iner text-center">
-                         <h2>  <font color=#2058A2> <br><br>Nuestros AstroClubes 2022: <br><br><br> </font> </h2>
- 					
-			<img src="img/astroclubes2022/1.png" width="600" height="500" > <br>
 
-						 	<hr class="new1">
+            <hr class="new1">
+
+            <!-- 2025 photos title -->
+            <div class="intro_video_iner text-center">
+                <h2><font color=#2058A2><br><br>
+                    <span class="lang-content" data-lang="es">Nuestros AstroClubes 2025:</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Our 2025 AstroClubs:</span>
+                    <br><br><br></font></h2>
+
+                <img src="img/astroclubes2025/1.png" width="600" height="600"><br>
+                <img src="img/astroclubes2025/2.png" width="425" height="425">
+                <img src="img/astroclubes2025/3.png" width="425" height="425">
+                <img src="img/astroclubes2025/4.png" width="425" height="425">
+                <img src="img/astroclubes2025/5.png" width="425" height="425">
+                <img src="img/astroclubes2025/6.png" width="425" height="425">
+                <img src="img/astroclubes2025/7.png" width="425" height="425">
+                <img src="img/astroclubes2025/8.png" width="425" height="425">
+                <img src="img/astroclubes2025/9.png" width="425" height="425">
+                <img src="img/astroclubes2025/10.png" width="425" height="425">
+                <hr class="new1">
             </div>
-							 	
-        	<div class="intro_video_iner text-center">
-                         <h2>  <font color=#2058A2> <br><br>Conoce nuestros AstroClubes 2021 en este mapa interactivo: <br><br><br> </font> </h2>
- 					
-			<iframe src="https://uploads.knightlab.com/storymapjs/51df36c6292f9570670395a51ed62b44/astroclubs/index.html" frameborder="0" width="100%" height="800"></iframe>
 
-						 	<hr class="new1">
+            <!-- 2022 photos -->
+            <div class="intro_video_iner text-center">
+                <h2><font color=#2058A2><br><br>
+                    <span class="lang-content" data-lang="es">Nuestros AstroClubes 2022:</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Our 2022 AstroClubs:</span>
+                    <br><br><br></font></h2>
+
+                <img src="img/astroclubes2022/1.png" width="600" height="500"><br>
+                <hr class="new1">
             </div>
-<!-- 
-        	<div class="intro_video_iner text-center">
-                         <h3>  <font color=#2058A2> <br><br><br><br>¿Es un maestro egresado de CosmoAmautas y desea abrir su AstroClub?  </font> </h3>
-						 <p> <br> <font color="black">
-	 Estimada maestra, estimado maestro egresado del taller CosmoAmautas,<br>
 
-						 ¡Felicitaciones por iniciar un AstroClub en su centro educativo!<br>
-						  Esta es una noticia muy grata para nosotros y estamos seguros que será de mucho provecho para sus alumnas y alumnos.<br>  
-					     El equipo CosmoAmautas tratará de brindarle el apoyo que necesita para iniciar esta aventura científica con sus estudiantes.<br>
-					     Por favor seguir las pautas presentadas en este formulario para comenzar. <br>  <br><br>
-					     						   <a href="https://forms.gle/NLGqmFMFRcLn7HrS6" class="btn_2"> INSCRIBA SU ASTROCLUB AQUÍ </a>				  
-						   </font> </p>
-			</div>	
-		
- -->	
+            <!-- 2021 interactive map -->
+            <div class="intro_video_iner text-center">
+                <h2><font color=#2058A2><br><br>
+                    <span class="lang-content" data-lang="es">Conoce nuestros AstroClubes 2021 en este mapa interactivo:</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Explore our 2021 AstroClubs on this interactive map:</span>
+                    <br><br><br></font></h2>
 
+                <iframe src="https://uploads.knightlab.com/storymapjs/51df36c6292f9570670395a51ed62b44/astroclubs/index.html" frameborder="0" width="100%" height="800"></iframe>
+                <hr class="new1">
+            </div>
 
-			
-<!--		<div class="container">		
-            <div class="row justify-content-between align-items-center">
-            
-						
-                <div class="col-lg-7">
-                    <div class="service_text">
- 						<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/JtrBUz3V5Vj91JhIZeWdQw/652522883442229248" data-did="38764efba99b271ce4f49ae6e6752e76f76bcecc" data-language="es_ES"><a href="https://astroclubcosmoamautas.tumblr.com/post/652522883442229248/bienvenidos-al-blog-de-nuestros-astroclubes">https://astroclubcosmoamautas.tumblr.com/post/652522883442229248/bienvenidos-al-blog-de-nuestros-astroclubes</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
-				 	</div>
- 				</div>
- 				
- 				<div class="col-lg-5 ">
-        			<div class="intro_video_iner text-center">
-                         <h3>  <font color=#2058A2>Desea abrir su AstroClub?  </font> </h3>
-						 <p> <br> <font color="black">
-						 Estimada maestra, estimado maestro egresado del taller CosmoAmautas,<br>
-
-						 ¡Felicitaciones por iniciar un AstroClub en su centro educativo!<br>
-						  Esta es una noticia muy grata para nosotros y estamos seguros que será de mucho provecho para sus alumnas y alumnos.<br>  
-					     El equipo CosmoAmautas tratará de brindarle el apoyo que necesita para iniciar esta aventura científica con sus estudiantes.<br>
-					     Por favor seguir las pautas presentadas en este formulario para comenzar. <br>  <br><br>
-						  
-						  
-						   <a href="https://forms.gle/NLGqmFMFRcLn7HrS6" class="btn_2"> INSCRIBA SU ASTROCLUB AQUÍ </a>
-						   </font> </p>
-					</div>	
- 				 </div>
- 				 
- 			</div>
- 		</div> -->
- 		
- 		
-</section>
-	<!-- End Blog Area -->
-	
-
+        </div>
+    </section>
 
     <footer class="footer_part">
         <div class="container">
-        
             <div class="row justify-content-around">
                 <div class="col-sm-6 col-lg-4">
                     <div class="single_footer_part">
                         <img src="img/footer_logo.png" class="footer_logo" alt="">
-                        <h3> WWW.COSMOAMAUTAS.ORG </h3> 
-                         <p> E-mail: cosmoamautas@gmail.com </p>    
-                        
+                        <h3> WWW.COSMOAMAUTAS.ORG </h3>
+                        <p> E-mail: cosmoamautas@gmail.com </p>
                         <div class="footer_icon social_icon">
-                        		<ul class="list-unstyled">
-                           			 <li><a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon"><i class="fab fa-facebook-f fa-2x" style="color:white"></i></a></li>
-                            		<li><a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw"  class="single_social_icon"><i class="fab fa-twitter fa-2x" style="color:white"></i></a></li>
-                            		<li><a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon"><i class="fab fa-instagram fa-2x" style="color:white""></i></a></li>
-                        		</ul>
-                    		</div>     	
- 					</div>
- 				</div>
- 				
-			
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon"><i class="fab fa-facebook-f fa-2x" style="color:white"></i></a></li>
+                                <li><a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw" class="single_social_icon"><i class="fab fa-twitter fa-2x" style="color:white"></i></a></li>
+                                <li><a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon"><i class="fab fa-instagram fa-2x" style="color:white"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
             <hr>
- 
             <div class="row">
-            
-                <div class="col-lg-6">
-                    <div class="copyright_text">
-                        <p> Copyright &copy; CosmoAmautas 2021 </p>
-                    </div>
-                </div>     
-               
-                <div class="col-lg-6">
-
-                </div>
-            </div>
-            
-        </div>
-    </footer>
-    <!--::footer_part end::-->    
-    <!--================Blog Area =================
-    <section class="blog_area section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mb-5 mb-lg-0">
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="img/blog/single_blog_1.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="img/blog/single_blog_2.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="img/blog/single_blog_3.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="img/blog/single_blog_4.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="img/blog/single_blog_5.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="blog_right_sidebar">
-                        <aside class="single_sidebar_widget search_widget">
-                            <form action="#">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder='Search Keyword'
-                                            onfocus="this.placeholder = ''"
-                                            onblur="this.placeholder = 'Search Keyword'">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="button"><i class="ti-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="button rounded-0 primary-bg text-white w-100 btn_1"
-                                    type="submit">Search</button>
-                            </form>
-                        </aside>
-
-                        <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Category</h4>
-                            <ul class="list cat-list">
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Resaurant food</p>
-                                        <p>(37)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Travel news</p>
-                                        <p>(10)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Modern technology</p>
-                                        <p>(03)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Product</p>
-                                        <p>(11)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Inspiration</p>
-                                        <p>21</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Health Care (21)</p>
-                                        <p>09</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </aside>
-
-                        <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Recent Post</h3>
-                            <div class="media post_item">
-                                <img src="img/post/post_1.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>From life was you fish...</h3>
-                                    </a>
-                                    <p>January 12, 2019</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_2.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>The Amazing Hubble</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_3.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Astronomy Or Astrology</h3>
-                                    </a>
-                                    <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/post/post_4.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
-                                </div>
-                            </div>
-                        </aside>
-                        <aside class="single_sidebar_widget tag_cloud_widget">
-                            <h4 class="widget_title">Tag Clouds</h4>
-                            <ul class="list">
-                                <li>
-                                    <a href="#">project</a>
-                                </li>
-                                <li>
-                                    <a href="#">love</a>
-                                </li>
-                                <li>
-                                    <a href="#">technology</a>
-                                </li>
-                                <li>
-                                    <a href="#">travel</a>
-                                </li>
-                                <li>
-                                    <a href="#">restaurant</a>
-                                </li>
-                                <li>
-                                    <a href="#">life style</a>
-                                </li>
-                                <li>
-                                    <a href="#">design</a>
-                                </li>
-                                <li>
-                                    <a href="#">illustration</a>
-                                </li>
-                            </ul>
-                        </aside>
-
-
-                        <aside class="single_sidebar_widget instagram_feeds">
-                            <h4 class="widget_title">Instagram Feeds</h4>
-                            <ul class="instagram_row flex-wrap">
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_5.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_6.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_7.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_8.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_9.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-fluid" src="img/post/post_10.png" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </aside>
-
-
-                        <aside class="single_sidebar_widget newsletter_widget">
-                            <h4 class="widget_title">Newsletter</h4>
-
-                            <form action="#">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                                </div>
-                                <button class="button rounded-0 primary-bg text-white w-100 btn_1"
-                                    type="submit">Subscribe</button>
-                            </form>
-                        </aside>
-                    </div>
-                </div>
+                <div class="col-lg-6"><div class="copyright_text"><p> Copyright &copy; CosmoAmautas 2021 </p></div></div>
+                <div class="col-lg-6"></div>
             </div>
         </div>
-    </section>
-    <!--================Blog Area =================-->
-
-        </div>
     </footer>
-    <!--::footer_part end::-->
-
-    <!-- jquery plugins here-->
 
     <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
     <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- easing js -->
     <script src="js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
     <script src="js/swiper.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/jquery.smooth-scroll.min.js"></script>
-    <!-- swiper js -->
     <script src="js/masonry.pkgd.js"></script>
-    <!-- particles js -->
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
-    <!-- swiper js -->
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/countdown.jquery.min.js"></script>
     <script src="js/timer.js"></script>
-    <!-- contact js -->
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/contact.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>-->
-</body>
+    <script src="js/custom.js"></script>
 
+    <script>
+    (function(){
+      var btns = document.querySelectorAll('.lang-btn');
+      var blocks = document.querySelectorAll('.lang-content');
+      function setLang(lang){
+        for (var i=0;i<blocks.length;i++){
+          blocks[i].style.display = (blocks[i].getAttribute('data-lang')===lang) ? '' : 'none';
+        }
+        for (var j=0;j<btns.length;j++){
+          if (btns[j].getAttribute('data-lang')===lang){ btns[j].classList.add('active'); }
+          else { btns[j].classList.remove('active'); }
+        }
+      }
+      for (var k=0;k<btns.length;k++){
+        btns[k].addEventListener('click', function(e){
+          e.preventDefault();
+          setLang(this.getAttribute('data-lang'));
+        });
+      }
+    })();
+    </script>
+</body>
 </html>

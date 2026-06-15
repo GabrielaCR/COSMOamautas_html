@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>COSMOamautas - AstroClubes / AstroClubs</title>
+
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- CSS existentes -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet para mapa interactivo -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <style>
+        :root {
+            --cosmo-blue: #2058A2;
+            --cosmo-dark-blue: #0028A0;
+            --cosmo-cyan: #59BFE6;
+            --cosmo-soft: #F4F8FF;
+            --cosmo-text: #26364A;
+            --cosmo-muted: #64748B;
+            --cosmo-border: #E5ECF8;
+            --cosmo-purple: #6B4EFF;
+            --cosmo-gold: #F4B942;
+        }
+
+        body {
+            color: var(--cosmo-text);
+        }
+
+        .breadcrumb .breadcrumb_iner_item h2 {
+            color: #fff;
+        }
+
+        .breadcrumb .breadcrumb_iner_item h2 .lang-content {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            line-height: inherit;
+            display: inline;
+        }
+
+        .donate-lang {
+            text-align: center;
+            margin: -45px auto 25px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .donate-lang > span {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #9aa0b3;
+            margin-bottom: 12px;
+        }
+
+        .lang-pills {
+            display: inline-flex;
+            border: 1px solid #d6dcf5;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 10px 28px rgba(32, 88, 162, .10);
+        }
+
+        .lang-pills a {
+            padding: 9px 28px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #2d43d2;
+            text-decoration: none;
+            transition: .35s;
+            cursor: pointer;
+        }
+
+        .lang-pills a.active {
+            background-image: linear-gradient(to left, #0028a0, #2058A2, #59bfe6);
+            color: #fff;
+        }
+
+        .lang-pills a:not(.active):hover {
+            background: #eef1ff;
+        }
+
+        .astro-hero-text {
+            max-width: 960px;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .astro-hero-text p {
+            color: var(--cosmo-text);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .astro-main-title {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .astro-highlight {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+        }
+
+        .astro-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin: 40px 0;
+        }
+
+        .astro-info-card {
+            background: #fff;
+            border: 1px solid var(--cosmo-border);
+            border-radius: 22px;
+            padding: 26px 24px;
+            box-shadow: 0 14px 36px rgba(0, 40, 160, .08);
+            text-align: left;
+            height: 100%;
+            transition: .25s ease;
+        }
+
+        .astro-info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 44px rgba(0, 40, 160, .13);
+        }
+
+        .astro-info-card .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #EAF5FF, #F3F0FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+
+        .astro-info-card h4 {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .astro-info-card p {
+            color: #44546A;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .astro-activity-list {
+            max-width: 900px;
+            margin: 35px auto;
+            background:
+                radial-gradient(circle at top left, rgba(89, 191, 230, .18), transparent 32%),
+                linear-gradient(180deg, #F7FAFF, #F1F5FF);
+            border: 1px solid var(--cosmo-border);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .astro-activity-list h4 {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .astro-activity-list ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .astro-activity-list li {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .astro-stats-row {
+            margin: 40px 0 20px;
+        }
+
+        .astro-stat-card {
+            background: #fff;
+            border-radius: 22px;
+            padding: 28px 18px;
+            box-shadow: 0 12px 32px rgba(0, 40, 160, .08);
+            border: 1px solid var(--cosmo-border);
+            text-align: center;
+            margin-bottom: 20px;
+            transition: .25s ease;
+        }
+
+        .astro-stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .astro-stat-card h2 {
+            color: var(--cosmo-blue);
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .astro-stat-card h5 {
+            color: #182235;
+            font-weight: 800;
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        .astro-map-section {
+            padding: 65px 28px 70px;
+            background:
+                radial-gradient(circle at top right, rgba(89, 191, 230, .18), transparent 26%),
+                radial-gradient(circle at bottom left, rgba(107, 78, 255, .12), transparent 30%),
+                linear-gradient(180deg, #FFFFFF 0%, #F4F8FF 100%);
+            border-radius: 34px;
+            margin: 35px 0;
+            border: 1px solid #E9F0FC;
+        }
+
+        .astro-section-kicker {
+            display: inline-block;
+            color: var(--cosmo-blue);
+            background: #EAF5FF;
+            border: 1px solid #D9EBFF;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-weight: 900;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .astro-section-title {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .astro-section-text {
+            max-width: 880px;
+            margin: 0 auto 30px;
+            color: #3E4B5F;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .astro-map-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin: 26px 0 28px;
+        }
+
+        .astro-mini-stat {
+            background: rgba(255, 255, 255, .84);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--cosmo-border);
+            border-radius: 18px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 10px 26px rgba(0, 40, 160, .07);
+        }
+
+        .astro-mini-stat strong {
+            display: block;
+            color: var(--cosmo-blue);
+            font-size: 26px;
+            line-height: 1;
+            margin-bottom: 8px;
+            font-weight: 900;
+        }
+
+        .astro-mini-stat span {
+            color: var(--cosmo-muted);
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .astro-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .astro-filters select {
+            min-width: 168px;
+            padding: 10px 14px;
+            border: 1px solid #d6dcf5;
+            border-radius: 30px;
+            color: var(--cosmo-blue);
+            font-weight: 800;
+            background: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .astro-map-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.7fr) minmax(300px, .85fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        #astroclub-map {
+            width: 100%;
+            height: 660px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 18px 45px rgba(0, 40, 160, .17);
+            z-index: 1;
+            border: 1px solid #DCE8FA;
+        }
+
+        .map-side-panel {
+            background: #fff;
+            border: 1px solid var(--cosmo-border);
+            border-radius: 24px;
+            padding: 22px;
+            box-shadow: 0 18px 45px rgba(0, 40, 160, .10);
+            height: 660px;
+            overflow: auto;
+        }
+
+        .map-side-panel h3 {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .map-side-panel p {
+            color: var(--cosmo-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .astro-map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #F8FAFF;
+            border: 1px solid #E8EFFC;
+            padding: 7px 10px;
+            border-radius: 999px;
+            color: #40516A;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .legend-dot {
+            width: 11px;
+            height: 11px;
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .dot-active { background: var(--cosmo-blue); }
+        .dot-forming { background: var(--cosmo-cyan); }
+        .dot-history { background: var(--cosmo-purple); }
+        .dot-featured { background: var(--cosmo-gold); }
+
+        .astroclub-popup {
+            min-width: 230px;
+        }
+
+        .astroclub-popup h4 {
+            color: var(--cosmo-blue);
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .astroclub-popup p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        .popup-badge {
+            display: inline-block;
+            margin: 6px 0 8px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: #EEF5FF;
+            color: var(--cosmo-blue);
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .popup-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: var(--cosmo-blue);
+            color: #fff !important;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .astroclub-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .astroclub-card {
+            background: #fff;
+            border: 1px solid var(--cosmo-border);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 26px rgba(0, 40, 160, .07);
+            transition: .25s ease;
+        }
+
+        .astroclub-card:hover {
+            transform: translateY(-3px);
+            border-color: #CFE1FA;
+        }
+
+        .astroclub-card h4 {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        .astroclub-card p {
+            margin-bottom: 5px;
+            color: #44546A;
+            font-size: 13px;
+        }
+
+        .astro-status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 12px;
+            border-radius: 30px;
+            background: #eef5ff;
+            color: var(--cosmo-blue);
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .need-chip {
+            display: inline-block;
+            margin: 8px 5px 0 0;
+            padding: 5px 9px;
+            background: #FFF8E7;
+            color: #8A5A00;
+            border: 1px solid #FFE4A6;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .astro-no-results {
+            text-align: center;
+            color: #555;
+            padding: 20px;
+            background: #F8FAFF;
+            border-radius: 16px;
+        }
+
+        .astro-gallery {
+            padding: 40px 0;
+        }
+
+        .astro-gallery-title {
+            color: var(--cosmo-blue);
+            font-weight: 900;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .astro-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            align-items: start;
+        }
+
+        .astro-gallery-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0, 40, 160, .12);
+            transition: transform .25s ease;
+        }
+
+        .astro-gallery-grid img:hover {
+            transform: translateY(-4px);
+        }
+
+        .astro-feature-image {
+            max-width: 680px;
+            width: 100%;
+            height: auto;
+            border-radius: 22px;
+            box-shadow: 0 12px 35px rgba(0, 40, 160, .12);
+            margin-bottom: 24px;
+        }
+
+        .astro-cta {
+            background:
+                radial-gradient(circle at top right, rgba(255, 255, 255, .20), transparent 26%),
+                linear-gradient(135deg, #0028a0, #2058A2, #59bfe6);
+            color: #fff;
+            border-radius: 28px;
+            padding: 45px 30px;
+            text-align: center;
+            margin: 45px 0 30px;
+            box-shadow: 0 20px 45px rgba(0, 40, 160, .18);
+        }
+
+        .astro-cta h2 {
+            color: #fff;
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+
+        .astro-cta p {
+            max-width: 780px;
+            margin: 0 auto 25px;
+            color: #fff;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .astro-cta a {
+            display: inline-block;
+            background: #fff;
+            color: var(--cosmo-blue);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 900;
+            text-decoration: none;
+            transition: .25s;
+        }
+
+        .astro-cta a:hover {
+            transform: translateY(-2px);
+            color: var(--cosmo-dark-blue);
+        }
+
+        @media (max-width: 992px) {
+            .astro-map-layout {
+                grid-template-columns: 1fr;
+            }
+
+            #astroclub-map,
+            .map-side-panel {
+                height: 520px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .astro-hero-text p,
+            .astro-section-text {
+                font-size: 16px;
+            }
+
+            #astroclub-map {
+                height: 460px;
+            }
+
+            .map-side-panel {
+                height: auto;
+                max-height: 560px;
+            }
+
+            .astro-stat-card h2 {
+                font-size: 34px;
+            }
+
+            .lang-pills a {
+                padding: 8px 20px;
+            }
+
+            .astro-map-section {
+                padding: 45px 16px 50px;
+                border-radius: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/logo.png" alt="Logo CosmoAmautas">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="ti-menu"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                                <li class="nav-item"><a class="nav-link" href="maestros.html">CAPACITACIONES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="embajadores.html">EMBAJADORES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="astroclub.html">ASTROCLUBES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="videojuegos.html">VIDEOJUEGOS</a></li>
+                                <li class="nav-item"><a class="nav-link" href="material.html">MATERIAL</a></li>
+                                <li class="nav-item"><a class="nav-link" href="instructores.html">EQUIPO</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contribuye.html">CONTRIBUYE</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>
+                                <span class="lang-content" data-lang="es">AstroClubes</span>
+                                <span class="lang-content" data-lang="en" style="display:none;">AstroClubs</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sample-text-area">
+        <div class="container">
+
+            <div class="donate-lang">
+                <span>Idioma / Language</span>
+                <div class="lang-pills">
+                    <a class="lang-btn active" data-lang="es">Español</a>
+                    <a class="lang-btn" data-lang="en">English</a>
+                </div>
+            </div>
+
+            <div class="lang-content" data-lang="es">
+                <div class="astro-hero-text">
+                    <h2 class="astro-main-title">AstroClubes que transforman comunidades educativas</h2>
+
+                    <p>
+                        En distintas regiones del Perú, docentes y estudiantes están convirtiendo la curiosidad por el cielo
+                        en experiencias de aprendizaje científico. Desde zonas rurales hasta ciudades, los AstroClubes son
+                        espacios donde niñas, niños y jóvenes observan, preguntan, experimentan y comparten ciencia.
+                    </p>
+
+                    <p>
+                        Muchos docentes que empezaron sin experiencia previa en astronomía hoy son líderes locales en
+                        educación científica y agentes de cambio en sus instituciones educativas.
+                    </p>
+
+                    <p>
+                        <span class="astro-highlight">Con el acompañamiento de CosmoAmautas, tu AstroClub también puede marcar la diferencia.</span>
+                    </p>
+                </div>
+
+                <h2 class="astro-main-title text-center">¿Qué son los AstroClubes CosmoAmautas?</h2>
+
+                <div class="astro-cards">
+                    <div class="astro-info-card">
+                        <div class="icon">🔭</div>
+                        <h4>Aprendizaje activo</h4>
+                        <p>
+                            Son espacios extracurriculares donde estudiantes aprenden haciendo, experimentan y aplican
+                            el método científico de manera colaborativa.
+                        </p>
+                    </div>
+
+                    <div class="astro-info-card">
+                        <div class="icon">👩‍🏫</div>
+                        <h4>Docentes líderes</h4>
+                        <p>
+                            Cada AstroClub es creado y acompañado por docentes egresados de las capacitaciones
+                            CosmoAmautas, quienes impulsan actividades en sus comunidades.
+                        </p>
+                    </div>
+
+                    <div class="astro-info-card">
+                        <div class="icon">✨</div>
+                        <h4>Ciencia con enfoque inclusivo</h4>
+                        <p>
+                            Los AstroClubes buscan inspirar especialmente a niñas y adolescentes, fortaleciendo su confianza
+                            en sus capacidades científicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="astro-activity-list">
+                    <h4>Actividades destacadas</h4>
+                    <ul>
+                        <li>Observación de eclipses y eventos astronómicos.</li>
+                        <li>Experimento de Eratóstenes en colaboración con otros AstroClubes.</li>
+                        <li>Construcción de modelos del sistema solar y uso de simuladores.</li>
+                        <li>Charlas, debates, ferias científicas y observación nocturna con telescopios.</li>
+                        <li>Actividades de divulgación científica en la comunidad educativa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lang-content" data-lang="en" style="display:none;">
+                <div class="astro-hero-text">
+                    <h2 class="astro-main-title">AstroClubs transforming educational communities</h2>
+
+                    <p>
+                        Across Peru, teachers and students are turning curiosity about the sky into meaningful science
+                        learning experiences. From rural areas to cities, AstroClubs are spaces where children and young
+                        people observe, ask questions, experiment and share science.
+                    </p>
+
+                    <p>
+                        Many teachers who started with no previous astronomy experience are now local leaders in science
+                        education and agents of change in their schools.
+                    </p>
+
+                    <p>
+                        <span class="astro-highlight">With CosmoAmautas' support, your AstroClub can make a difference too.</span>
+                    </p>
+                </div>
+
+                <h2 class="astro-main-title text-center">What are CosmoAmautas AstroClubs?</h2>
+
+                <div class="astro-cards">
+                    <div class="astro-info-card">
+                        <div class="icon">🔭</div>
+                        <h4>Active learning</h4>
+                        <p>
+                            They are extracurricular spaces where students learn by doing, experiment and apply the
+                            scientific method collaboratively.
+                        </p>
+                    </div>
+
+                    <div class="astro-info-card">
+                        <div class="icon">👩‍🏫</div>
+                        <h4>Teacher leadership</h4>
+                        <p>
+                            Each AstroClub is created and led by teachers who completed CosmoAmautas training programs
+                            and promote activities in their communities.
+                        </p>
+                    </div>
+
+                    <div class="astro-info-card">
+                        <div class="icon">✨</div>
+                        <h4>Inclusive science</h4>
+                        <p>
+                            AstroClubs aim to especially inspire girls and young women, strengthening their confidence
+                            in their scientific abilities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="astro-activity-list">
+                    <h4>Highlighted activities</h4>
+                    <ul>
+                        <li>Observation of eclipses and astronomical events.</li>
+                        <li>The Eratosthenes experiment in collaboration with other AstroClubs.</li>
+                        <li>Building solar system models and using simulators.</li>
+                        <li>Talks, debates, science fairs and night observation sessions with telescopes.</li>
+                        <li>Science outreach activities within the educational community.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row astro-stats-row">
+                <div class="col-md-4">
+                    <div class="astro-stat-card">
+                        <h2><span class="count">21</span></h2>
+                        <h5>
+                            <span class="lang-content" data-lang="es">Regiones</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Regions</span>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="astro-stat-card">
+                        <h2><span class="count">83</span></h2>
+                        <h5>
+                            <span class="lang-content" data-lang="es">Nuevos AstroClubes</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">New AstroClubs</span>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="astro-stat-card">
+                        <h2>+<span class="count">2000</span></h2>
+                        <h5>
+                            <span class="lang-content" data-lang="es">Estudiantes inscritos</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Students enrolled</span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="new1">
+
+            <section class="astro-map-section">
+                <div class="text-center">
+                    <span class="astro-section-kicker">
+                        <span class="lang-content" data-lang="es">Impacto territorial</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">Territorial impact</span>
+                    </span>
+
+                    <h2 class="astro-section-title">
+                        <span class="lang-content" data-lang="es">Mapa Nacional de AstroClubes</span>
+                        <span class="lang-content" data-lang="en" style="display:none;">National AstroClubs Map</span>
+                    </h2>
+
+                    <p class="astro-section-text">
+                        <span class="lang-content" data-lang="es">
+                            Explora dónde la astronomía está fortaleciendo capacidades científicas en el Perú.
+                            Cada punto representa una comunidad educativa impulsada por docentes líderes.
+                        </span>
+                        <span class="lang-content" data-lang="en" style="display:none;">
+                            Explore where astronomy is strengthening scientific skills in Peru.
+                            Each point represents an educational community led by teacher leaders.
+                        </span>
+                    </p>
+                </div>
+
+                <div class="astro-map-dashboard">
+                    <div class="astro-mini-stat">
+                        <strong id="visible-clubs">0</strong>
+                        <span>
+                            <span class="lang-content" data-lang="es">AstroClubes visibles</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Visible AstroClubs</span>
+                        </span>
+                    </div>
+
+                    <div class="astro-mini-stat">
+                        <strong id="visible-students">0</strong>
+                        <span>
+                            <span class="lang-content" data-lang="es">Estudiantes representados</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Students represented</span>
+                        </span>
+                    </div>
+
+                    <div class="astro-mini-stat">
+                        <strong id="visible-regions">0</strong>
+                        <span>
+                            <span class="lang-content" data-lang="es">Regiones filtradas</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Filtered regions</span>
+                        </span>
+                    </div>
+
+                    <div class="astro-mini-stat">
+                        <strong id="visible-needs">0</strong>
+                        <span>
+                            <span class="lang-content" data-lang="es">Necesidades registradas</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">Registered needs</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="astro-filters">
+                    <select id="filter-region">
+                        <option value="all">Todas las regiones</option>
+                    </select>
+
+                    <select id="filter-year">
+                        <option value="all">Todos los años</option>
+                    </select>
+
+                    <select id="filter-status">
+                        <option value="all">Todos los estados</option>
+                        <option value="Activo">Activo</option>
+                        <option value="En formación">En formación</option>
+                        <option value="Histórico">Histórico</option>
+                        <option value="Destacado">Destacado</option>
+                    </select>
+
+                    <select id="filter-zone">
+                        <option value="all">Todas las zonas</option>
+                        <option value="Rural">Rural</option>
+                        <option value="Urbana">Urbana</option>
+                        <option value="Periurbana">Periurbana</option>
+                    </select>
+
+                    <select id="filter-level">
+                        <option value="all">Todos los niveles</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Mixto">Mixto</option>
+                    </select>
+
+                    <select id="filter-need">
+                        <option value="all">Todas las necesidades</option>
+                        <option value="Telescopio">Telescopio</option>
+                        <option value="Materiales">Materiales</option>
+                        <option value="Kit de ciencia">Kit de ciencia</option>
+                        <option value="Tablets">Tablets</option>
+                        <option value="Charlas">Charlas</option>
+                    </select>
+                </div>
+
+                <div class="astro-map-layout">
+                    <div id="astroclub-map"></div>
+
+                    <aside class="map-side-panel">
+                        <h3>
+                            <span class="lang-content" data-lang="es">AstroClubes encontrados</span>
+                            <span class="lang-content" data-lang="en" style="display:none;">AstroClubs found</span>
+                        </h3>
+
+                        <p>
+                            <span class="lang-content" data-lang="es">
+                                Usa los filtros para explorar el alcance territorial, actividades, necesidades y estado de cada AstroClub.
+                            </span>
+                            <span class="lang-content" data-lang="en" style="display:none;">
+                                Use the filters to explore the territorial reach, activities, needs and status of each AstroClub.
+                            </span>
+                        </p>
+
+                        <div class="astro-map-legend">
+                            <span class="legend-item"><span class="legend-dot dot-active"></span>Activo</span>
+                            <span class="legend-item"><span class="legend-dot dot-forming"></span>En formación</span>
+                            <span class="legend-item"><span class="legend-dot dot-history"></span>Histórico</span>
+                            <span class="legend-item"><span class="legend-dot dot-featured"></span>Destacado</span>
+                        </div>
+
+                        <div id="astroclub-list" class="astroclub-list"></div>
+                    </aside>
+                </div>
+            </section>
+
+            <div class="astro-cta">
+                <h2>
+                    <span class="lang-content" data-lang="es">¿Quieres formar o apoyar un AstroClub?</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Do you want to start or support an AstroClub?</span>
+                </h2>
+
+                <p>
+                    <span class="lang-content" data-lang="es">
+                        Si eres docente, institución educativa, empresa o aliado, puedes sumarte para impulsar experiencias de ciencia,
+                        astronomía e indagación con estudiantes del Perú.
+                    </span>
+                    <span class="lang-content" data-lang="en" style="display:none;">
+                        If you are a teacher, educational institution, company or partner, you can join us to promote science,
+                        astronomy and inquiry-based learning experiences with students in Peru.
+                    </span>
+                </p>
+
+                <a href="mailto:cosmoamautas@gmail.com?subject=Quiero%20apoyar%20un%20AstroClub">
+                    <span class="lang-content" data-lang="es">Solicitar información</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Request information</span>
+                </a>
+            </div>
+
+            <section class="astro-gallery">
+                <h2 class="astro-gallery-title">
+                    <span class="lang-content" data-lang="es">Nuestros AstroClubes 2025</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Our 2025 AstroClubs</span>
+                </h2>
+
+                <div class="text-center">
+                    <img src="img/astroclubes2025/1.png" class="astro-feature-image"
+                        alt="AstroClubes CosmoAmautas 2025" loading="lazy">
+                </div>
+
+                <div class="astro-gallery-grid">
+                    <img src="img/astroclubes2025/2.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/3.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/4.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/5.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/6.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/7.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/8.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/9.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                    <img src="img/astroclubes2025/10.png" alt="AstroClub CosmoAmautas 2025" loading="lazy">
+                </div>
+            </section>
+
+            <hr class="new1">
+
+            <section class="astro-gallery">
+                <h2 class="astro-gallery-title">
+                    <span class="lang-content" data-lang="es">Nuestros AstroClubes 2022</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Our 2022 AstroClubs</span>
+                </h2>
+
+                <div class="text-center">
+                    <img src="img/astroclubes2022/1.png" class="astro-feature-image"
+                        alt="AstroClubes CosmoAmautas 2022" loading="lazy">
+                </div>
+            </section>
+
+            <hr class="new1">
+
+            <section class="astro-gallery">
+                <h2 class="astro-gallery-title">
+                    <span class="lang-content" data-lang="es">Conoce nuestros AstroClubes 2021 en este mapa interactivo</span>
+                    <span class="lang-content" data-lang="en" style="display:none;">Explore our 2021 AstroClubs on this interactive map</span>
+                </h2>
+
+                <iframe
+                    src="https://uploads.knightlab.com/storymapjs/51df36c6292f9570670395a51ed62b44/astroclubs/index.html"
+                    frameborder="0" width="100%" height="800"
+                    title="Mapa interactivo de AstroClubes CosmoAmautas 2021">
+                </iframe>
+            </section>
+
+        </div>
+    </section>
+
+    <footer class="footer_part">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="single_footer_part">
+                        <img src="img/footer_logo.png" class="footer_logo" alt="Logo CosmoAmautas">
+                        <h3>WWW.COSMOAMAUTAS.ORG</h3>
+                        <p>E-mail: cosmoamautas@gmail.com</p>
+
+                        <div class="footer_icon social_icon">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://www.facebook.com/CosmoAmautas/" class="single_social_icon">
+                                        <i class="fab fa-facebook-f fa-2x" style="color:white"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/CosmoAmautas?ref_src=twsrc%5Etfw" class="single_social_icon">
+                                        <i class="fab fa-twitter fa-2x" style="color:white"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/cosmoamautas/" class="single_social_icon">
+                                        <i class="fab fa-instagram fa-2x" style="color:white"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright_text">
+                        <p>
+                            Copyright &copy; CosmoAmautas 2026.<br>
+                            Todos los derechos Reservados.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS existentes -->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <script src="js/masonry.pkgd.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/countdown.jquery.min.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        /*
+            Datos de ejemplo.
+            Reemplaza estos datos por la información real de tus AstroClubes.
+
+            Recomendación:
+            No publiques nombres completos de estudiantes menores de edad.
+            Si publicas nombres de docentes o fotos, asegúrate de tener autorización.
+        */
+
+        const astroclubs = [
+            {
+                nombre: "AstroClub CosmoAmautas Cajamarca",
+                region: "Cajamarca",
+                provincia: "Cajamarca",
+                distrito: "Cajamarca",
+                institucion: "Institución educativa participante",
+                docente: "Docente líder",
+                year: "2025",
+                estudiantes: 20,
+                estado: "Activo",
+                zona: "Urbana",
+                nivel: "Secundaria",
+                frecuencia: "Quincenal",
+                actividad: "Observación astronómica y feria científica",
+                logro: "Primera feria astronómica escolar",
+                necesidades: ["Telescopio", "Materiales"],
+                foto: "img/astroclubes_map/cajamarca-2025.jpg",
+                lat: -7.1617,
+                lng: -78.5128
+            },
+            {
+                nombre: "AstroClub CosmoAmautas Áncash",
+                region: "Áncash",
+                provincia: "Huaraz",
+                distrito: "Huaraz",
+                institucion: "Institución educativa participante",
+                docente: "Docente líder",
+                year: "2025",
+                estudiantes: 18,
+                estado: "Destacado",
+                zona: "Urbana",
+                nivel: "Mixto",
+                frecuencia: "Mensual",
+                actividad: "Talleres de astronomía y modelos del sistema solar",
+                logro: "Participación en actividad pública de divulgación",
+                necesidades: ["Kit de ciencia", "Charlas"],
+                foto: "img/astroclubes_map/cajamarca-2025.jpg",
+                lat: -9.5278,
+                lng: -77.5278
+            },
+            {
+                nombre: "AstroClub CosmoAmautas Lima",
+                region: "Lima",
+                provincia: "Lima",
+                distrito: "Lima",
+                institucion: "Institución educativa participante",
+                docente: "Docente líder",
+                year: "2022",
+                estudiantes: 15,
+                estado: "Histórico",
+                zona: "Urbana",
+                nivel: "Secundaria",
+                frecuencia: "Mensual",
+                actividad: "Experimento de Eratóstenes",
+                logro: "Medición colaborativa de la circunferencia terrestre",
+                necesidades: ["Materiales"],
+                foto: "img/astroclubes_map/cajamarca-2025.jpg",
+                lat: -12.0464,
+                lng: -77.0428
+            },
+            {
+                nombre: "AstroClub CosmoAmautas Cusco",
+                region: "Cusco",
+                provincia: "Cusco",
+                distrito: "Cusco",
+                institucion: "Institución educativa participante",
+                docente: "Docente líder",
+                year: "2025",
+                estudiantes: 22,
+                estado: "Activo",
+                zona: "Periurbana",
+                nivel: "Secundaria",
+                frecuencia: "Quincenal",
+                actividad: "Mapas estelares y observación lunar",
+                logro: "Noche de observación con familias",
+                necesidades: ["Telescopio", "Tablets"],
+                foto: "img/astroclubes_map/cajamarca-2025.jpg",
+                lat: -13.5319,
+                lng: -71.9675
+            },
+            {
+                nombre: "AstroClub CosmoAmautas Puno",
+                region: "Puno",
+                provincia: "Puno",
+                distrito: "Puno",
+                institucion: "Institución educativa participante",
+                docente: "Docente líder",
+                year: "2025",
+                estudiantes: 16,
+                estado: "En formación",
+                zona: "Rural",
+                nivel: "Mixto",
+                frecuencia: "Mensual",
+                actividad: "Charlas de astronomía y uso de simuladores",
+                logro: "Primera convocatoria de estudiantes",
+                necesidades: ["Charlas", "Materiales"],
+                foto: "img/astroclubes_map/cajamarca-2025.jpg",
+                lat: -15.8402,
+                lng: -70.0219
+            }
+        ];
+
+        const map = L.map('astroclub-map').setView([-9.19, -75.0152], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        let markersLayer = L.layerGroup().addTo(map);
+
+        const regionFilter = document.getElementById('filter-region');
+        const yearFilter = document.getElementById('filter-year');
+        const statusFilter = document.getElementById('filter-status');
+        const zoneFilter = document.getElementById('filter-zone');
+        const levelFilter = document.getElementById('filter-level');
+        const needFilter = document.getElementById('filter-need');
+        const listContainer = document.getElementById('astroclub-list');
+
+        const visibleClubs = document.getElementById('visible-clubs');
+        const visibleStudents = document.getElementById('visible-students');
+        const visibleRegions = document.getElementById('visible-regions');
+        const visibleNeeds = document.getElementById('visible-needs');
+
+        function getMarkerColor(estado) {
+            if (estado === "Activo") return "#2058A2";
+            if (estado === "En formación") return "#59BFE6";
+            if (estado === "Histórico") return "#6B4EFF";
+            if (estado === "Destacado") return "#F4B942";
+            return "#2058A2";
+        }
+
+        function fillFilters() {
+            const regions = [...new Set(astroclubs.map(item => item.region))].sort();
+            const years = [...new Set(astroclubs.map(item => item.year))].sort();
+
+            regions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region;
+                option.textContent = region;
+                regionFilter.appendChild(option);
+            });
+
+            years.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearFilter.appendChild(option);
+            });
+        }
+
+        function getFilteredAstroclubs() {
+            return astroclubs.filter(item => {
+                const matchRegion = regionFilter.value === 'all' || item.region === regionFilter.value;
+                const matchYear = yearFilter.value === 'all' || item.year === yearFilter.value;
+                const matchStatus = statusFilter.value === 'all' || item.estado === statusFilter.value;
+                const matchZone = zoneFilter.value === 'all' || item.zona === zoneFilter.value;
+                const matchLevel = levelFilter.value === 'all' || item.nivel === levelFilter.value;
+                const matchNeed = needFilter.value === 'all' || item.necesidades.includes(needFilter.value);
+
+                return matchRegion && matchYear && matchStatus && matchZone && matchLevel && matchNeed;
+            });
+        }
+
+        function renderDashboard(filtered) {
+            const totalStudents = filtered.reduce((sum, item) => sum + Number(item.estudiantes || 0), 0);
+            const totalRegions = new Set(filtered.map(item => item.region)).size;
+            const totalNeeds = filtered.reduce((sum, item) => sum + item.necesidades.length, 0);
+
+            visibleClubs.textContent = filtered.length;
+            visibleStudents.textContent = totalStudents;
+            visibleRegions.textContent = totalRegions;
+            visibleNeeds.textContent = totalNeeds;
+        }
+
+        function renderMap() {
+            markersLayer.clearLayers();
+
+            const filtered = getFilteredAstroclubs();
+
+            filtered.forEach(item => {
+                const needsHtml = item.necesidades.map(need => `<span class="need-chip">${need}</span>`).join('');
+
+                const photoHtml = item.foto
+                    ? `<img src="${item.foto}" alt="${item.nombre}" class="astro-popup-photo">`
+                    : "";
+
+                const popupContent = `
+                    <div class="astroclub-popup">
+                        ${photoHtml}
+                        <h4>${item.nombre}</h4>
+                        <span class="popup-badge">${item.estado}</span>
+                        <p><strong>📍 Región:</strong> ${item.region}, ${item.provincia}</p>
+                        <p><strong>🏫 Institución:</strong> ${item.institucion}</p>
+                        <p><strong>📅 Año:</strong> ${item.year}</p>
+                        <p><strong>👥 Estudiantes:</strong> ${item.estudiantes}</p>
+                        <p><strong>🎓 Nivel:</strong> ${item.nivel}</p>
+                        <p><strong>🔭 Actividad:</strong> ${item.actividad}</p>
+                        <p><strong>🏆 Logro:</strong> ${item.logro}</p>
+                        <p><strong>Necesidades:</strong></p>
+                        <div>${needsHtml}</div>
+                        <a class="popup-link" href="mailto:cosmoamautas@gmail.com?subject=Quiero%20apoyar%20el%20${encodeURIComponent(item.nombre)}">
+                            Apoyar este AstroClub
+                        </a>
+                    </div>
+                `;
+
+                L.circleMarker([item.lat, item.lng], {
+                    radius: item.estado === "Destacado" ? 11 : 9,
+                    fillColor: getMarkerColor(item.estado),
+                    color: "#ffffff",
+                    weight: 3,
+                    opacity: 1,
+                    fillOpacity: 0.92
+                })
+                    .bindPopup(popupContent)
+                    .addTo(markersLayer);
+            });
+
+            if (filtered.length > 0) {
+                const bounds = L.latLngBounds(filtered.map(item => [item.lat, item.lng]));
+                map.fitBounds(bounds, { padding: [40, 40] });
+            } else {
+                map.setView([-9.19, -75.0152], 5);
+            }
+        }
+
+        function renderList() {
+            const filtered = getFilteredAstroclubs();
+
+            renderDashboard(filtered);
+
+            if (filtered.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="astro-no-results">
+                        No se encontraron AstroClubes con los filtros seleccionados.
+                    </div>
+                `;
+                return;
+            }
+
+        listContainer.innerHTML = filtered.map(item => {
+            const needsHtml = item.necesidades.map(need => `<span class="need-chip">${need}</span>`).join('');
+
+            const cardPhotoHtml = item.foto
+                ? `<img src="${item.foto}" alt="${item.nombre}" class="astroclub-card-photo">`
+                : "";
+
+            return `
+                <div class="astroclub-card">
+                    ${cardPhotoHtml}
+                    <h4>${item.nombre}</h4>
+                    <p><strong>Región:</strong> ${item.region}, ${item.provincia}</p>
+                    <p><strong>Institución:</strong> ${item.institucion}</p>
+                    <p><strong>Año:</strong> ${item.year}</p>
+                    <p><strong>Zona:</strong> ${item.zona}</p>
+                    <p><strong>Nivel:</strong> ${item.nivel}</p>
+                    <p><strong>Estudiantes:</strong> ${item.estudiantes}</p>
+                    <p><strong>Actividad:</strong> ${item.actividad}</p>
+                    <p><strong>Logro:</strong> ${item.logro}</p>
+                    <div>${needsHtml}</div>
+                    <span class="astro-status">${item.estado}</span>
+                </div>
+            `;
+        }).join('');
+        }
+
+        function updateAstroclubs() {
+            renderMap();
+            renderList();
+        }
+
+        regionFilter.addEventListener('change', updateAstroclubs);
+        yearFilter.addEventListener('change', updateAstroclubs);
+        statusFilter.addEventListener('change', updateAstroclubs);
+        zoneFilter.addEventListener('change', updateAstroclubs);
+        levelFilter.addEventListener('change', updateAstroclubs);
+        needFilter.addEventListener('change', updateAstroclubs);
+
+        fillFilters();
+        updateAstroclubs();
+    </script>
+
+    <script>
+        (function () {
+            var btns = document.querySelectorAll('.lang-btn');
+            var blocks = document.querySelectorAll('.lang-content');
+
+            function setLang(lang) {
+                for (var i = 0; i < blocks.length; i++) {
+                    blocks[i].style.display = (blocks[i].getAttribute('data-lang') === lang) ? '' : 'none';
+                }
+
+                for (var j = 0; j < btns.length; j++) {
+                    if (btns[j].getAttribute('data-lang') === lang) {
+                        btns[j].classList.add('active');
+                    } else {
+                        btns[j].classList.remove('active');
+                    }
+                }
+
+                if (typeof map !== 'undefined') {
+                    setTimeout(function () {
+                        map.invalidateSize();
+                    }, 200);
+                }
+            }
+
+            for (var k = 0; k < btns.length; k++) {
+                btns[k].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    setLang(this.getAttribute('data-lang'));
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>
